@@ -1,0 +1,64 @@
+---
+import content from '../content/site-content.json';
+const { nav } = content;
+---
+
+<nav class="nav" id="main-nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">{nav.siteName}</a>
+
+    <ul class="nav__links">
+      <li class="nav__dropdown">
+        <button class="nav__dropdown-toggle">Systems</button>
+        <ul class="nav__dropdown-menu">
+          {nav.systemsDropdown.map(item => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </li>
+      <li class="nav__dropdown">
+        <button class="nav__dropdown-toggle">Resources</button>
+        <ul class="nav__dropdown-menu">
+          {nav.resourcesDropdown.map(item => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </li>
+      <li><a href="#discord" class="nav__link">Discord</a></li>
+      <li><a href="#quiz" class="nav__link">Quiz</a></li>
+      <li><a href="/start" class="nav__link">Start Your Own Game</a></li>
+      <li><a href="#gm" class="nav__link">Game Master</a></li>
+    </ul>
+
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav__mobile-menu" id="mobile-menu">
+    <a href="#systems">Systems</a>
+    <a href="#free-rules">Free Rules</a>
+    <a href="#tools">Tools</a>
+    <a href="#ai-gms">AI Game Masters</a>
+    <a href="#discord">Discord</a>
+    <a href="#quiz">Quiz</a>
+    <a href="/start">Start Your Own Game</a>
+    <a href="#gm">Game Master</a>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger?.addEventListener('click', () => {
+    nav?.classList.toggle('nav--open');
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('nav--open');
+    });
+  });
+</script>

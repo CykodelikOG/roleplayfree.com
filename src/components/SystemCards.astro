@@ -1,0 +1,16 @@
+---
+import content from '../content/site-content.json';
+import SystemCard from './SystemCard.astro';
+const { systems } = content;
+---
+
+<section class="section section--alt" id="systems">
+  <div class="container">
+    <h2 class="section__heading">The systems</h2>
+    <div class="systems-grid">
+      {systems.map(system => (
+        <SystemCard system={system} />
+      ))}
+    </div>
+  </div>
+</section>

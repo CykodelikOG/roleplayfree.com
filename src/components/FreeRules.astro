@@ -1,0 +1,25 @@
+---
+import content from '../content/site-content.json';
+const { freeRules } = content;
+
+function getLabelClass(label: string) {
+  if (label === 'Free, no registration') return 'link-label--free';
+  if (label === 'Free, downloads instantly') return 'link-label--free';
+  return 'link-label--free-reg';
+}
+---
+
+<section class="section section--alt" id="free-rules">
+  <div class="container">
+    <h2 class="section__heading">Free rules index</h2>
+    <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">Every free ruleset we know about. You know what you're clicking before you click it.</p>
+    <div class="free-rules-list">
+      {freeRules.map(item => (
+        <div>
+          <a href={item.href} target="_blank" rel="noopener">{item.name}</a>
+          <span class={`link-label ${getLabelClass(item.linkLabel)}`}>{item.linkLabel}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

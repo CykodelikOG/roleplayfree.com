@@ -1,0 +1,9 @@
+---
+import content from '../content/site-content.json';
+const { shiftBanner } = content;
+---
+
+<div class="shift-banner">
+  {shiftBanner.copy}
+  <a href={shiftBanner.ctaHref} target="_blank" rel="noopener">{shiftBanner.ctaLabel} →</a>
+</div>

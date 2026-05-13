@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Start Your Own Game | roleplayfree.com"
+  description="You've got people. Here's how to turn that into a game."
+>
+  <Nav />
+
+  <section class="section" style="padding-top: calc(var(--space-xl) + var(--nav-height))">
+    <div class="container" style="max-width: 720px">
+
+      <h1 style="margin-bottom: var(--space-md)">You've got people. Here's how to turn that into a game.</h1>
+
+      <div style="background: var(--color-bg-card); border: 1px dashed var(--color-border); border-radius: var(--radius-lg); padding: var(--space-lg); text-align: center; color: var(--color-text-muted);">
+        <p style="font-size: 1.1rem; margin-bottom: var(--space-sm)">This page is coming soon.</p>
+        <p>Check back soon for guides on how many people you need, who runs it, what to bring, and how to run your first Session Zero.</p>
+        <p style="margin-top: var(--space-md)">In the meantime, <a href="#quiz" style="color: var(--color-text); font-weight: 600">take the quiz</a> to find the right system for your group.</p>
+      </div>
+
+      <div style="margin-top: var(--space-xl)">
+        <h2 style="margin-bottom: var(--space-md)">What this page will cover</h2>
+        <p>How many people you need: three to five is ideal. Two players and a GM works. One GM, two players minimum.</p>
+        <p>Who runs it? One person needs to be GM. That involves one person taking up the job of supercomputer/mobile library/god. They'll have a lot of reading ahead.</p>
+        <p>What you need on the night: character sheets, dice or a dice app, somewhere to sit, the free rules. Nothing else required for session one.</p>
+        <p>Session Zero: what it is and why it matters more than the rulebook.</p>
+        <p>Quickstart guides coming soon.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

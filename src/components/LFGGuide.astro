@@ -1,0 +1,50 @@
+---
+import content from '../content/site-content.json';
+const { affiliates } = content;
+---
+
+<section class="section" id="lfg">
+  <div class="container">
+    <h2 class="section__heading">How to actually get into a Discord game</h2>
+    <div class="lfg-steps">
+
+      <div class="lfg-step">
+        <h3 class="lfg-step__heading">Before you join anything, have these ready</h3>
+        <p class="lfg-step__body">Your timezone written out properly. Not "I'm in Europe". "GMT+1, available weekday evenings and Sunday afternoons." Your experience level. Be honest. GMs prefer honest beginners over people who fake experience and slow the table. Your system preferences (the quiz just gave you these). A VTT account. Roll20 is free and runs in the browser. <a href="https://roll20.net" target="_blank" rel="noopener">Roll20</a><span class="link-label link-label--free-reg">Free, registration required</span></p>
+      </div>
+
+      <div class="lfg-step">
+        <h3 class="lfg-step__heading">The wall you'll hit</h3>
+        <p class="lfg-step__body">Most servers make you complete onboarding before you can see anything useful. Read the rules post, react with the emoji, go to the roles channel, select your systems and availability. Don't skip this. It's a filter. Servers use it to remove people who can't follow basic instructions. Many servers also have their own specific application format pinned in the LFG channel. It won't look like any generic template. Read it. Follow it exactly, to the letter. Not following their format is a soft rejection even if nobody tells you that.</p>
+      </div>
+
+      <div class="lfg-step">
+        <h3 class="lfg-step__heading">Writing an LFG post that gets responses</h3>
+        <div class="lfg-template">
+          System: [system name]<br />
+          Experience: [honest assessment]<br />
+          Timezone: [specific]<br />
+          Availability: [specific days and times]<br />
+          Looking for: [campaign / one-shot / open to either]<br />
+          VTT: [which one, account ready or needs setup]<br />
+          About me: [two sentences, be a human being]
+        </div>
+        <p class="lfg-step__body" style="margin-top: 0.75rem;">What kills your application: vague availability, no timezone, writing an essay, saying "I'm flexible."</p>
+      </div>
+
+      <div class="lfg-step">
+        <h3 class="lfg-step__heading">Paid GMing</h3>
+        <p class="lfg-step__body">We're not pushing this. A free game found above is just as good. But if you want a guaranteed seat at a table this week without waitlists or applications, paid GMing exists and it works. <a href={affiliates.startplaying_referral} target="_blank" rel="noopener">StartPlaying.games</a><span class="link-label link-label--paid">Paid</span></p>
+      </div>
+
+      <div class="lfg-step">
+        <h3 class="lfg-step__heading">Session Zero</h3>
+        <p class="lfg-step__body">Most serious campaigns start with a Session Zero. A no-dice meeting to agree on safety tools, what content is off limits, and character concepts. It sounds formal. It's what separates campaigns that run for two years from ones that collapse after three sessions.</p>
+        <div class="session-zero-video-placeholder" style="background: var(--color-bg-card); border: 1px dashed var(--color-border); border-radius: var(--radius); padding: var(--space-sm) var(--space-md); margin-top: var(--space-xs); color: var(--color-text-muted); font-size: 0.82rem; text-align: center;">
+          [Video embed: replace with your YouTube link or a recommended Session Zero explainer]
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

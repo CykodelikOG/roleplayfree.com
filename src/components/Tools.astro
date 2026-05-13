@@ -1,0 +1,55 @@
+---
+import content from '../content/site-content.json';
+const { tools } = content;
+
+function getLabelClass(label: string) {
+  if (label === 'Paid') return 'link-label--paid';
+  if (label.includes('registration')) return 'link-label--free-reg';
+  return 'link-label--free';
+}
+---
+
+<section class="section" id="tools">
+  <div class="container">
+    <h2 class="section__heading">Tools</h2>
+
+    <div class="tools-subsection">
+      <p class="tools-subsection__heading">Virtual tabletops</p>
+      <div class="tools-list">
+        {tools.vtts.map(item => (
+          <div class="tools-list__item">
+            <a href={item.href} target="_blank" rel="noopener" class="tools-list__link">{item.name}</a>
+            <span class={`link-label ${getLabelClass(item.linkLabel)}`}>{item.linkLabel}</span>
+            <span class="tools-list__desc">{item.description}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="tools-subsection">
+      <p class="tools-subsection__heading">Character sheets</p>
+      <div class="tools-list">
+        {tools.characterSheets.map(item => (
+          <div class="tools-list__item">
+            <a href={item.href} target="_blank" rel="noopener" class="tools-list__link">{item.name}</a>
+            <span class={`link-label ${getLabelClass(item.linkLabel)}`}>{item.linkLabel}</span>
+            <span class="tools-list__desc">{item.description}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="tools-subsection">
+      <p class="tools-subsection__heading">Dice rollers</p>
+      <div class="tools-list">
+        {tools.diceRollers.map(item => (
+          <div class="tools-list__item">
+            <a href={item.href} target="_blank" rel="noopener" class="tools-list__link">{item.name}</a>
+            <span class={`link-label ${getLabelClass(item.linkLabel)}`}>{item.linkLabel}</span>
+            <span class="tools-list__desc">{item.description}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

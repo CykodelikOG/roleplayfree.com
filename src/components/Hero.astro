@@ -1,0 +1,13 @@
+---
+import content from '../content/site-content.json';
+const { hero } = content;
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero__text">
+      {hero.lines.map(line => <p>{line}</p>)}
+    </div>
+    <a href={hero.ctaHref} class="btn btn--primary">{hero.ctaLabel}</a>
+  </div>
+</section>

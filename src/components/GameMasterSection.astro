@@ -1,0 +1,14 @@
+---
+import content from '../content/site-content.json';
+const { gameMasterSection } = content;
+---
+
+<section class="section" id="gm">
+  <div class="container">
+    <div class="gm-section">
+      <h2 class="gm-section__heading">{gameMasterSection.heading}</h2>
+      <p class="gm-section__body">{gameMasterSection.body}</p>
+      <a href={gameMasterSection.ctaHref} class="btn btn--secondary">{gameMasterSection.ctaLabel}</a>
+    </div>
+  </div>
+</section>

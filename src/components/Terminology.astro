@@ -1,0 +1,18 @@
+---
+import content from '../content/site-content.json';
+const { terminology } = content;
+---
+
+<section class="section" id="terminology">
+  <div class="container">
+    <h2 class="section__heading">The vocabulary</h2>
+    <div class="terminology-grid">
+      {terminology.map(item => (
+        <div class="term-row">
+          <div class="term-row__term">{item.term}</div>
+          <div class="term-row__def">{item.definition}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

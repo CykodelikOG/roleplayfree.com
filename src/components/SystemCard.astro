@@ -1,0 +1,93 @@
+---
+interface Props {
+  system: {
+    id: string;
+    name: string;
+    tagline: string;
+    socialProof?: string | null;
+    accentColor: string;
+    accentColorSecondary?: string | null;
+    vibe: string;
+    easyToLearn: string;
+    willIDie: string;
+    campaignLength: string;
+    dice: string[];
+    freeRules?: { label: string; href: string; linkLabel: string } | null;
+    paidLink?: { href: string; linkLabel: string } | null;
+    discord?: { label: string; href: string } | null;
+    edition_note?: string;
+  };
+}
+
+const { system } = Astro.props;
+
+function getLabelClass(label: string) {
+  if (label === 'Paid') return 'link-label--paid';
+  if (label.includes('registration')) return 'link-label--free-reg';
+  return 'link-label--free';
+}
+---
+
+<div class="system-card" id={`system-${system.id}`}>
+  <div class="system-card__accent" style={`background: ${system.accentColor}`}></div>
+
+  <div
+    class="system-card__image"
+    style={`background: ${system.accentColor}; opacity: 0.15;`}
+    aria-hidden="true"
+  ></div>
+
+  <div class="system-card__body">
+    <h3 class="system-card__name">{system.name}</h3>
+    <p class="system-card__tagline">{system.tagline}</p>
+
+    {system.socialProof && (
+      <p class="system-card__social-proof">{system.socialProof}</p>
+    )}
+
+    <div class="system-card__stats">
+      <div class="stat">
+        <span class="stat__label">Vibe</span>
+        <span class="stat__value">{system.vibe}</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Easy to learn?</span>
+        <span class="stat__value">{system.easyToLearn}</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Will my character die?</span>
+        <span class="stat__value">{system.willIDie}</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Campaign length</span>
+        <span class="stat__value">{system.campaignLength}</span>
+      </div>
+    </div>
+
+    <p class="system-card__dice">Dice: {system.dice.join(', ')}</p>
+
+    {system.edition_note && (
+      <p style="font-size: 0.78rem; color: var(--color-text-muted); margin-bottom: var(--space-sm);">{system.edition_note}</p>
+    )}
+
+    <div class="system-card__links">
+      {system.freeRules && (
+        <a href={system.freeRules.href} target="_blank" rel="noopener" class="system-card__link">
+          {system.freeRules.label}
+          <span class={`link-label ${getLabelClass(system.freeRules.linkLabel)}`}>
+            {system.freeRules.linkLabel}
+          </span>
+        </a>
+      )}
+      {system.paidLink && (
+        <a href={system.paidLink.href} target="_blank" rel="noopener" class="system-card__link">
+          Buy rulebook
+          <span class="link-label link-label--paid">{system.paidLink.linkLabel}</span>
+        </a>
+      )}
+      {system.discord && (
+        <a href={system.discord.href} class="system-card__link">{system.discord.label}</a>
+      )}
+    </div>
+  </div>
+</div>

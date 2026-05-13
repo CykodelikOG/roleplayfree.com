@@ -1,0 +1,35 @@
+---
+import content from '../content/site-content.json';
+const { howToSteps } = content;
+---
+
+<section class="section section--alt" id="how-to">
+  <div class="container">
+    <h2 class="section__heading">How this works</h2>
+    <div class="steps__grid">
+      {howToSteps.map(step => (
+        <div class="step-card">
+          <div class="step-card__number">{String(step.number).padStart(2, '0')}</div>
+          <h3 class="step-card__heading">{step.heading}</h3>
+          <p class="step-card__body">{step.body}</p>
+          {step.links && (
+            <div class="step-card__links">
+              {step.links.map(link => (
+                <p>
+                  <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noopener' : undefined}>
+                    {link.label}
+                  </a>
+                  {link.linkLabel && (
+                    <span class={`link-label ${link.linkLabel === 'Paid' ? 'link-label--paid' : link.linkLabel.includes('registration') ? 'link-label--free-reg' : 'link-label--free'}`}>
+                      {link.linkLabel}
+                    </span>
+                  )}
+                </p>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

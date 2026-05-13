@@ -1,0 +1,27 @@
+---
+import content from '../content/site-content.json';
+const { aiGameMasters } = content;
+---
+
+<section class="section section--alt" id="ai-gms">
+  <div class="container">
+    <h2 class="section__heading">AI Game Masters</h2>
+    <p class="ai-gms-intro">Don't have a group yet and can't wait? AI Game Masters exist, and some of them are genuinely impressive. This isn't the same as playing with real people. You won't have the table banter, the shared memory, or the chaos of four humans making terrible decisions together. But if you need to roll dice this second, these platforms come closest to the real thing.</p>
+    <div class="ai-gms-list">
+      {aiGameMasters.map(gm => (
+        <div class="ai-gm-card">
+          <div class="ai-gm-card__header">
+            <a href={gm.href} target="_blank" rel="noopener" class="ai-gm-card__name">{gm.name} ↗</a>
+            {gm.linkLabel && (
+              <span class={`link-label ${gm.linkLabel === 'Free, registration required' || gm.linkLabel === 'Free tier, registration required' ? 'link-label--free-reg' : 'link-label--paid'}`}>
+                {gm.linkLabel}
+              </span>
+            )}
+          </div>
+          {gm.pricingNote && <p class="ai-gm-card__pricing">{gm.pricingNote}</p>}
+          <p class="ai-gm-card__desc">{gm.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
