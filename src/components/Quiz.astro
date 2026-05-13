@@ -205,6 +205,34 @@ const quizJson = JSON.stringify({ questions: quiz.questions, systemMap });
   }
 
   // ── Scoring ───────────────────────────────────────────
+  function calculateMaxScores() {
+    const maxScores = {};
+    Object.keys(systemMap).forEach(id => { maxScores[id] = 0; });
+
+    questions.forEach(q => {
+      if (q.type === 'single') {
+        const best = {};
+        q.options.forEach(opt => {
+          Object.entries(opt.weights).forEach(([sys, pts]) => {
+            best[sys] = Math.max(best[sys] || 0, Number(pts));
+          });
+        });
+        Object.entries(best).forEach(([sys, pts]) => {
+          maxScores[sys] = (maxScores[sys] || 0) + pts;
+        });
+      } else if (q.type === 'multi') {
+        Object.keys(systemMap).forEach(sys => {
+          const opts = q.options
+            .map(o => Number(o.weights[sys] || 0))
+            .sort((a, b) => b - a);
+          maxScores[sys] = (maxScores[sys] || 0) + opts.slice(0, 4).reduce((a, b) => a + b, 0);
+        });
+      }
+    });
+
+    return maxScores;
+  }
+
   function calculateScores() {
     const scores = {};
     Object.keys(systemMap).forEach(id => { scores[id] = 0; });
@@ -222,9 +250,12 @@ const quizJson = JSON.stringify({ questions: quiz.questions, systemMap });
       });
     });
 
+    const maxScores = calculateMaxScores();
+
     return Object.entries(scores)
-      .sort((a, b) => b[1] - a[1])
       .filter(([, pts]) => pts > 0)
+      .map(([id, pts]) => [id, maxScores[id] > 0 ? pts / maxScores[id] : 0])
+      .sort((a, b) => b[1] - a[1])
       .map(([id]) => id);
   }
 
@@ -349,7 +380,22 @@ const quizJson = JSON.stringify({ questions: quiz.questions, systemMap });
     }
   }
 
+  // ── Lock quiz box to tallest question height ──────────
+  function lockBoxHeight() {
+    const box = document.getElementById('quiz-box');
+    if (!box) return;
+    const questions = box.querySelectorAll('.quiz-question');
+    let maxH = 0;
+    questions.forEach(q => {
+      q.style.display = '';
+      maxH = Math.max(maxH, q.offsetHeight);
+      q.style.display = 'none';
+    });
+    if (maxH > 0) box.style.minHeight = (maxH + 80) + 'px';
+  }
+
   // ── Init ──────────────────────────────────────────────
+  lockBoxHeight();
   const restored = loadState();
   if (restored && primaryResult && secondaryResult) {
     showResult(primaryResult, secondaryResult);
