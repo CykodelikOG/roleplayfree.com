@@ -1,6 +1,6 @@
 {
   "affiliates": {
-    "drivethrurpg_id": "PLACEHOLDER",
+    "drivethrurpg_id": "819957",
     "amazon_tag": "cykodelik-21",
     "startplaying_referral": "https://startplaying.games/referral/cmp3vmklg007wjl046wylrjgn"
   },
@@ -129,7 +129,7 @@
       "campaignLength": "One-shot to lifetime",
       "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
       "freeRules": { "label": "D&D Beyond", "href": "https://www.dndbeyond.com", "linkLabel": "Free, registration required" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_DND?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": null,
       "discord": { "label": "D&D Discord servers", "href": "#discord" },
       "quizResultWhy": "Your answers describe a classic heroic adventure. D&D has the biggest community, the most resources, and a free ruleset you can open right now. Start here."
     },
@@ -146,7 +146,7 @@
       "campaignLength": "Medium to long. Political intrigue needs time to breathe.",
       "dice": ["d10 pool"],
       "freeRules": { "label": "Free supplements at Paradox", "href": "https://www.paradoxinteractive.com", "linkLabel": "Free, downloads instantly" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_VTM?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/256795/vampire-the-masquerade-5th-edition?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "Vampire Discord servers", "href": "#discord" },
       "quizResultWhy": "You want politics, power, and a character who wrestles with what they're becoming. Vampire puts all of that at the centre of every session.",
       "edition_note": "V5 is current. V20 is still widely played. Vampire: The Requiem is a separate game. Different lore, different clans, different world. Check which edition your group is running before buying."
@@ -164,7 +164,7 @@
       "campaignLength": "Flexible. Single runs or full campaigns.",
       "dice": ["d6 pool"],
       "freeRules": { "label": "Official quickstart on DriveThruRPG", "href": "https://www.drivethrurpg.com/product/160161", "linkLabel": "Free, registration required" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_SR5?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/115985/shadowrun-fifth-edition-core-rulebook-master-index-edition?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "Shadowrun Discord servers", "href": "#discord" },
       "quizResultWhy": "Crew dynamics, corporate warfare, and a world that wants you dead. Shadowrun rewards players who plan and improvise in equal measure."
     },
@@ -181,7 +181,7 @@
       "campaignLength": "Short to medium. Fast and loose by design.",
       "dice": ["d6 pool"],
       "freeRules": null,
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_SRA?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/194759/shadowrun-anarchy?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "Shadowrun Discord servers", "href": "#discord" },
       "quizResultWhy": "Same world as Shadowrun, half the rulebook. Anarchy gets you into the cyberpunk fiction fast without the character-building spreadsheet."
     },
@@ -198,7 +198,7 @@
       "campaignLength": "Short to medium. Most scenarios are self-contained.",
       "dice": ["d100", "d6"],
       "freeRules": { "label": "Free quickstart including The Haunting adventure", "href": "https://www.chaosium.com/cthulhu-quickstart/", "linkLabel": "Free, downloads instantly" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_COC?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/150997/call-of-cthulhu-7th-edition-keeper-s-rulebook?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "Call of Cthulhu Discord servers", "href": "#discord" },
       "quizResultWhy": "You want mystery, dread, and the creeping certainty that you are not equipped for what you found. Call of Cthulhu delivers this in one of the most accessible systems on this list."
     },
@@ -215,7 +215,7 @@
       "campaignLength": "Long. Built for epic progression.",
       "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
       "freeRules": { "label": "Archives of Nethys", "href": "https://2e.aonprd.com", "linkLabel": "Free, no registration" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_PF2?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": null,
       "discord": { "label": "Pathfinder Discord servers", "href": "#discord" },
       "quizResultWhy": "You want tactical depth and options that reward careful play. Pathfinder 2e has one of the most complete rulesets available, and the whole thing is free."
     },
@@ -232,7 +232,7 @@
       "campaignLength": "Completely variable",
       "dice": ["FATE dice (4 custom d6)"],
       "freeRules": { "label": "Evil Hat pay-what-you-want", "href": "https://www.evilhat.com/store/fate-core/", "linkLabel": "Free, registration required" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_FATE?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/114903/fate-core-system?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "FATE Discord servers", "href": "#discord" },
       "quizResultWhy": "Your concept doesn't fit neatly into any other box. FATE is a storytelling engine that works for any genre and hands narrative control to the table."
     },
@@ -249,7 +249,7 @@
       "campaignLength": "Short. Horror works best in concentrated doses.",
       "dice": ["d10", "d100", "d6"],
       "freeRules": null,
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_MOS?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/484223/mothership-warden-s-operations-manual?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "Mothership Discord servers", "href": "#discord" },
       "quizResultWhy": "Survival horror in deep space with stripped-back rules and no pretense that you're the hero. Mothership does one thing and does it better than anything else."
     },
@@ -266,7 +266,7 @@
       "campaignLength": "Short. Characters rarely survive long enough for campaigns.",
       "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
       "freeRules": { "label": "Free SRD at morkborg.com", "href": "https://morkborg.com/content/", "linkLabel": "Free, no registration" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_MB?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/295910/moerk-borg-english?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "Mörk Borg Discord servers", "href": "#discord" },
       "quizResultWhy": "Short, brutal, and unlike anything else. Mörk Borg is a one-session death spiral with artwork that looks like a metal album cover. It earns every award it has won."
     },
@@ -300,7 +300,7 @@
       "campaignLength": "Medium to long. The political web needs time to tangle.",
       "dice": ["Custom d10 ring and skill dice"],
       "freeRules": null,
-      "paidLink": { "href": "https://www.drivethrurpg.com/product/DTRPG_ID_L5R?affiliate_id=PLACEHOLDER", "linkLabel": "Paid" },
+      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/257004/legend-of-the-five-rings-core-rulebook?affiliate_id=819957", "linkLabel": "Paid" },
       "discord": { "label": "L5R Discord servers", "href": "#discord" },
       "quizResultWhy": "Political drama, honour as a game mechanic, and a world where one wrong word ends you faster than any blade. Legend of the Five Rings is unlike anything else on this list."
     }
