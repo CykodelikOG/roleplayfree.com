@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = 'roleplayfree.com | Find your tabletop RPG and start playing',
+  title = 'Free Tabletop RPG Guide for Beginners | roleplayfree.com',
   description = 'Free resource hub for tabletop RPG beginners. Find your system, get the free rules, find a group, and start playing tonight.',
   ogImage = 'https://roleplayfree.com/og-quiz.png',
   ogUrl = 'https://roleplayfree.com',
@@ -38,6 +38,7 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    <link rel="canonical" href={ogUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Google Analytics -->
