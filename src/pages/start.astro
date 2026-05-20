@@ -7,6 +7,15 @@ import Footer from '../components/Footer.astro';
 <Layout
   title="Start Your Own Game | roleplayfree.com"
   description="You've got people. Here's how to turn that into a game."
+  ogUrl="https://roleplayfree.com/start"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roleplayfree.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Start Your Own Game", "item": "https://roleplayfree.com/start/" }
+    ]
+  }}
 >
   <Nav />
 

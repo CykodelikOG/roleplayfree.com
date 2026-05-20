@@ -10,6 +10,14 @@ import Footer from '../components/Footer.astro';
   description="Eight questions. Honest answers. Find your system and your runner-up."
   ogImage="https://roleplayfree.com/og-quiz.png"
   ogUrl="https://roleplayfree.com/quiz"
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roleplayfree.com/" },
+      { "@type": "ListItem", "position": 2, "name": "What tabletop RPG should you play?", "item": "https://roleplayfree.com/quiz/" }
+    ]
+  }}
 >
   <Nav />
   <Quiz />

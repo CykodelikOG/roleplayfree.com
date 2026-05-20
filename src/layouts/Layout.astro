@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogUrl?: string;
+  jsonLd?: object | object[];
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description = 'Free resource hub for tabletop RPG beginners. Find your system, get the free rules, find a group, and start playing tonight.',
   ogImage = 'https://roleplayfree.com/og-quiz.png',
   ogUrl = 'https://roleplayfree.com',
+  jsonLd,
 } = Astro.props;
 ---
 
@@ -40,6 +42,7 @@ const {
 
     <link rel="canonical" href={ogUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KVDJ8TC0K"></script>

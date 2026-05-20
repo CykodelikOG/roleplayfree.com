@@ -16,7 +16,13 @@ import GameMasterSection from '../components/GameMasterSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
+<Layout jsonLd={{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "roleplayfree.com",
+  "url": "https://roleplayfree.com",
+  "description": "Free resource hub for tabletop RPG beginners. Find your system, get the free rules, find a group, and start playing tonight."
+}}>
   <Nav />
   <ShiftBanner />
   <Hero />
