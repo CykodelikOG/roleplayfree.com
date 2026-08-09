@@ -4,9 +4,37 @@
 
 ---
 
-## SESSION ZERO — DO THIS FIRST
+## Current State (as of 2026-05-24)
 
-Before writing a single line of code, run through this checklist with Peter:
+- **Live:** Site is at v1.9 deployed at https://roleplayfree.com. Astro 4.x on GitHub Pages. All 3 affiliates live (DriveThruRPG ID 819957 wired into all system cards with real product IDs; Amazon UK tag cykodelik-21; StartPlaying.games referral). Google Analytics live (G-TRZLDRM1GF, property 538764501). Discord server live (id 1504064773619323051). SEO fundamentals shipped (sitemap, robots.txt, canonical, JSON-LD, og:url trailing-slash fix).
+- **GA4 note:** Old measurement ID G-1KVDJ8TC0K was orphaned -- the GA4 account (23637701) existed but had no property under it, so zero data was ever collected. New property 538764501 + stream created 2026-05-24 via API. Analytics script: G:\AI\Claude\Projects\Roleplayfree\rf-analytics.py (run with `python rf-analytics.py`, first real data in 24-48hrs).
+- **Pinned:**
+  - Astro 4.x stack — do not switch frameworks
+  - DriveThruRPG product IDs in site-content.json — already verified working; do not change
+  - D&D and Pathfinder paidLinks are deliberately null (no standalone PDF on DTRPG for those systems)
+  - Layout.astro JSON-LD prop pattern — use it for any future structured data, do not inline scripts
+  - **Sitemap is a STATIC file at public/sitemap.xml** — @astrojs/sitemap is installed but unused due to a Windows path bug in the underlying sitemap lib. Do not try to wire the integration back in
+- **Do Not Touch:**
+  - The "SESSION ZERO" checklist below — historical, kept for reference but the work is done
+  - PATCH-style copy rules (no em dashes, no banned phrases) — apply to ALL future copy, no exceptions
+  - The 11 system card colour accents — chosen deliberately
+  - **ShiftBanner.astro component** — intentional traffic funnel to shiftrpg.com (Peter's SHIFT RPG coming-soon page). Do not remove or weaken. The "coming soon" framing is correct.
+- **Needs Decision:**
+  - Homepage meta description rewrite (drafted, awaits Peter's copy approval before going live)
+  - Per-page meta description for index.astro (same)
+  - Whether to build individual system pages (/systems/vampire etc.) — biggest remaining SEO opportunity; needs planning session
+  - Whether to create a Facebook app to clear the cosmetic fb:app_id warning (optional, not blocking)
+  - Whether to submit sitemap to Google Search Console (manual 2-min step Peter has to do)
+
+See [CHANGELOG.md](CHANGELOG.md) for version history. Pending SEO task list with detail lives in the **`project-roleplayfree.md` memory file** (recalled automatically; it is in the Claude memory store, NOT in ClaudeAssets/Reference/ — that path was wrong and was corrected in the 2026-08-09 sweep).
+
+> **⚠️ VERSION DISCREPANCY, unresolved 2026-08-09:** this file and `CHANGELOG.md` both stop at **v1.9**, but `MEMORY.md` records the site as **LIVE v2.0**. The project's own VERSIONING rule below makes a CHANGELOG entry mandatory for every release, so one of the two is wrong. **Confirm with Peter which is live before doing any site work or writing a version tag.**
+
+---
+
+## SESSION ZERO — DO THIS FIRST (HISTORICAL — done 2026-05-13, site is now LIVE)
+
+This was the initial deployment checklist. Kept for reference. Do not re-run.
 
 1. Confirm project folder path on local machine
 2. Confirm GitHub repository name: `roleplayfree.com`
@@ -27,7 +55,7 @@ Before writing a single line of code, run through this checklist with Peter:
 
 **Site:** roleplayfree.com
 **Purpose:** Free TTRPG resource hub. Helps newcomers find a system, understand the basics, find a group, and start playing — as fast as possible and for free where possible.
-**Secondary purpose:** Placeholder and anchor for SHIFT RPG (coming soon).
+**Relation to SHIFT RPG:** roleplayfree.com is a DIFFERENT project from SHIFT RPG. SHIFT RPG has its own site at shiftrpg.com (the rpg-landing project) and its own game design at Projects/shift-rpg/. roleplayfree.com is independent and exists to serve TTRPG beginners generally. **The ShiftBanner.astro component on this site is intentional** — it funnels traffic from roleplayfree.com visitors to the SHIFT RPG coming-soon page at shiftrpg.com. Keep the banner.
 **Stack:** Astro static site generator, deployed to GitHub Pages, custom domain via GoDaddy.
 **No backend.** No database. No user accounts. No server-side code. Static only.
 
@@ -787,6 +815,29 @@ No copyright date (causes maintenance overhead — omit).
 ### v0.1 — Planning complete
 Date: [date Claude Code starts]
 Status: CLAUDE.md written. No code yet. Awaiting Session Zero.
+
+---
+
+## Decisions Log
+*Migrated from global CLAUDE.md, 2026-06-12 reorg. See also CHANGELOG.md for version-by-version site changes.*
+
+- [2026-05-13] — roleplayfree.com scaffolded and deployed: Astro 4.x, GitHub Pages, custom domain via GoDaddy. DNS set, HTTPS cert pending.
+- [2026-05-13] — Affiliates: Amazon Associates UK live (tag cykodelik-21, BOV Malta payment), StartPlaying.games live. DriveThruRPG pending approval. Amazon Associates requires 3 qualifying sales within 180 days of 2026-05-13 or account closes.
+- [2026-05-13] — Discord server roleplayfree created: 12 system roles with emojis, Carl-bot reaction roles, Avrae dice bot, widget embedded in site. Server ID: 1504064773619323051.
+- [2026-05-13] — Quiz scoring normalised: ranks by % of max possible score per system, not raw points. Prevents D&D/Vampire/Shadowrun dominating due to appearing in more questions.
+- [2026-05-13] — OG image added for quiz page: 1200x630 dice photo with dark overlay. Facebook share card working.
+- [2026-05-13] — Role icon images generated at G:\Assets\misc\ (12 PNGs) — need Discord Level 2 boost to use. Kept for future use.
+- [2026-05-15] — DriveThruRPG affiliate approved (ID: 819957, approved by Matt McElroy). Works across DriveThruRPG, DMsGuild, DriveThruComics, DriveThruFiction, DriveThruCards, Storytellers Vault, WarGameVault.
+- [2026-05-18] — roleplayfree.com v1.5: DriveThruRPG affiliate wired into all system cards with real product IDs. D&D and Pathfinder paidLinks set null (no standalone PDF on DTRPG). Product IDs: VTM 256795, CoC 150997, FATE 114903, Mothership 484223, Mörk Borg 295910, L5R 257004, SR5 115985, SR Anarchy 194759.
+- [2026-05-18] — roleplayfree.com v1.6: Google Analytics added (G-1KVDJ8TC0K, property 23637701, account cykodelik@gmail.com). Snippet in Layout.astro head. (Superseded 2026-05-24 — see below.)
+- [2026-05-20] — roleplayfree.com v1.7-1.9: SEO fundamentals shipped (sitemap, robots.txt, canonical, JSON-LD, og:url fix). Full detail: CHANGELOG.md and project-roleplayfree.md memory.
+- [2026-05-24] — GA4 fix: old measurement ID G-1KVDJ8TC0K was orphaned (GA4 account 23637701 existed but had zero properties). Created new property 538764501 + web data stream via Admin API. New measurement ID G-TRZLDRM1GF deployed to site. Analytics script rf-analytics.py at Projects/Roleplayfree/.
+- [2026-06-24] — Absorbed the generic TTRPG tool ideas from the retired tabletop-rpg project (see Parked Ideas below); tabletop-rpg archived (project consolidation).
+
+## Parked Ideas (TTRPG tools — migrated from retired tabletop-rpg, 2026-06-24)
+- Digital character sheet tool
+- GM screen web app
+- Foundry VTT integration
 
 ---
 
