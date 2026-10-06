@@ -8,7 +8,11 @@
 
 - **Live:** Site is at **v2.0** deployed at https://roleplayfree.com. Astro 4.x on GitHub Pages. All 3 affiliates live (DriveThruRPG ID 819957 wired into all system cards with real product IDs; Amazon UK tag cykodelik-21; StartPlaying.games referral). Google Analytics live (G-TRZLDRM1GF, property 538764501). Discord server live (id 1504064773619323051). SEO fundamentals shipped (sitemap, robots.txt, canonical, JSON-LD, og:url trailing-slash fix).
 - **v2.0, 2026-10-06: 11 per-system landing pages are LIVE** at `/systems/<slug>/`, one per game system, each with its own title, meta description, canonical and breadcrumb schema. This closes the "biggest remaining SEO opportunity" that sat in Needs Decision from 2026-05-24. Route is `src/pages/systems/[id].astro`; the param is fed from each system's new `slug` field in site-content.json, so filename and URL deliberately differ. **Peter's standing copy-approval rule was NOT satisfied for the 11 meta descriptions: he pushed deliberately, treating the site as a vibe-coded placeholder (2026-10-06). The copy is live and unreviewed; it is fair game to rewrite.**
-- **Traffic reality check (GA4, 28 days to 2026-10-06): 6 sessions, 6 users, ALL landing on `/`, ZERO organic search, zero custom events.** Sources: 5 direct, 1 "AI Assistant". The site is effectively undiscovered, which is the premise the system pages are betting against. Re-run `python rf-analytics.py --days 28` to see whether the pages move organic off zero.
+- **Traffic (GA4, LIFETIME 2026-05-19 to 2026-10-06): 26 sessions, 26 users, 100% new, 0 returning.** Pages: 25 on `/`, 1 on `/quiz/`, nothing else ever. Sources: 18 direct, 6 "AI Assistant", **1 organic search, 1 organic social**. Countries: US 8, Germany 5, Hong Kong 2, then singles (Belgium, Brazil, Chile, India, Iran). Devices 69% desktop. Engagement 23.1%, avg session 18 seconds. Daily curve is a steady trickle, ~20 active days out of 134, **no gaps**, so tracking has run continuously since 2026-05-25.
+  - **⚠️ MEASUREMENT FLOOR, NOT A TRUE COUNT.** GA4 is client-side JavaScript and the TTRPG/gaming audience blocks trackers heavily. 26 is the minimum; the real figure is plausibly higher by a meaningful margin. Do not treat this as a precise visitor count, and do not use it to declare the site dead.
+  - **⚠️ VALID DATA STARTS 2026-05-25, NOT 2026-05-13.** The site went live 05-13; GA was added 05-18 with measurement ID G-1KVDJ8TC0K, which was **orphaned and collected zero data**; the correct ID landed 05-24; and the `is:inline` fix that actually made `gtag()` work landed **05-25**. Any "the site has been up for months" comparison must start from 05-25 or it is comparing against untracked time.
+  - **CLAUDE ERROR, 2026-10-06, logged deliberately:** Claude first quoted a **28-day slice (6 sessions)** and concluded the site was "effectively undiscovered" with "ZERO organic". Peter immediately challenged it ("the initial page has been up for months, GA should have something"). He was right: lifetime is 26, not 6, and organic is 1, not 0. The slice was accurate; **the conclusion drawn from it was not**. This is the 2026-08-04 chunking rule and the 2026-08-09 "a measurement that cannot see the quantity in dispute settles nothing" rule, both breached on the same number. Quote the lifetime figure first on a low-traffic site; a 28-day window on ~0.2 sessions/day is noise.
+  - Re-run with `python rf-analytics.py --days 140` for lifetime, and `--days 28` only as a recent-trend check alongside it.
 - **GA4 note:** Old measurement ID G-1KVDJ8TC0K was orphaned -- the GA4 account (23637701) existed but had no property under it, so zero data was ever collected. New property 538764501 + stream created 2026-05-24 via API. Analytics script: G:\AI\Claude\Projects\Roleplayfree\rf-analytics.py (run with `python rf-analytics.py`, first real data in 24-48hrs).
 - **Pinned:**
   - Astro 4.x stack — do not switch frameworks
@@ -45,7 +49,20 @@ Consequences for any work here:
 - Peter's own framing: "basically a vibe coded web page", "basically a placeholder". He is not precious
   about it. Do not treat the existing copy or structure as sacred.
 
-Full context: Claude memory file `project-mcast-web-development-unit`.
+**⛔ HOW CLAUDE WORKS ON THIS NOW (Peter's standing rule, 2026-10-06):** Peter does the coursework
+himself. Claude does **grunt work** (finding stock images and assets), **double-checking his output**,
+and **explaining what things do**. Claude does **NOT** offer to draft his deliverables. His words:
+"I don't want vibe coded slop anywhere... I would prefer to understand it and stick to the rules of
+school." He suspends the rule himself if he gets swamped; that is his call to make, not Claude's to
+pre-empt, and it gets no commentary. Once he understands a thing, he is happy to delegate building it.
+This does not license gatekeeping a direct code question.
+
+**Ask which hat he is wearing** before building a site feature that could double as an assignment
+artefact. Commercial work on the live site against the Amazon deadline is not coursework and is not
+restricted by this.
+
+Full context: Claude memory files `project-mcast-web-development-unit` and
+`feedback-coursework-peter-does-the-work`.
 
 ---
 
