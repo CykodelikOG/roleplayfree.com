@@ -16,7 +16,7 @@ Files: src/components/PlayNow.astro (new), src/components/Analytics.astro, src/c
 
 **Verification:** build clean at 14 pages; 3 CTAs render in the block in the intended order; all three tracked as `outbound_click` with `section="play-now"` and the correct `link_class`; existing affiliate and system-link tracking unaffected; 15 of 15 jsdom checks passing.
 
-**Open, needs Peter:** whether the DriveThruRPG affiliate ID 819957 extends to Roll20 links. Roll20 and OneBookShelf/DriveThruRPG combined in 2023 under shared ownership, and DriveThru runs a partner page titled "Roll20 and DriveThru Graphics" for linking to Roll20, but the partner help centre requires a login. The Roll20 link ships with **no affiliate parameter** rather than a guessed one. Contact is matt@roll20.net, the same person who approved affiliate 819957. Note the Pick Up Games listing is not a purchase page, so it likely would not earn regardless.
+**Resolved same day:** the DriveThruRPG affiliate ID does **not** cover Roll20. Matt McElroy's approval email of 2026-05-15 lists the covered sites as DriveThruRPG, DMsGuild, DriveThruComics, DriveThruFiction, DriveThruCards, Storytellers Vault and WarGameVault, with Roll20 absent. Those are product storefronts; Roll20 is the parent platform selling subscriptions. Shipping the Roll20 link with no affiliate parameter was therefore correct. Moot in any case, since Pick Up Games is a free LFG listing rather than a purchase page.
 
 **Also open:** Questwright remains the lead entry in the AI Game Masters section despite being a waitlist. Peter's call, on the basis that a short waitlist is acceptable for a free alpha. It is not in the Play Now block, so nothing here depends on it.
 
