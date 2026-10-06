@@ -66,8 +66,12 @@ const GA_ID = 'G-TRZLDRM1GF';
     var AFFILIATE = ['drivethrurpg.com', 'amazon.', 'amzn.to', 'startplaying.games'];
     var DISCORD   = ['discord.gg', 'discord.com', 'disboard.org'];
     var VTT       = ['roll20.net', 'foundryvtt.com', 'owlbear.rodeo', 'freevtt.com',
-                     'alchemyrpg.com', 'dice.codes', 'questwright.app', 'fables.gg',
-                     'masterai.app', 'lore-keeper.com', 'progeny.odin-matthias.de'];
+                     'alchemyrpg.com', 'dice.codes', 'progeny.odin-matthias.de'];
+    // AI game masters are their own category, not VTTs. They were lumped in with
+    // VTT tools until 2026-10-06, which would have made the Play Now block's
+    // reports unreadable: the AI options and Roll20 all came back as 'vtt_tool'.
+    var AI_GM     = ['fables.gg', 'perchance.org', 'lore-keeper.com',
+                     'masterai.app', 'questwright.app', 'aidungeon.com'];
 
     function send(name, params) {
       try {
@@ -90,6 +94,7 @@ const GA_ID = 'G-TRZLDRM1GF';
     function classify(h) {
       if (inList(h, AFFILIATE)) return 'affiliate';
       if (inList(h, DISCORD))   return 'discord';
+      if (inList(h, AI_GM))     return 'ai_gm';
       if (inList(h, VTT))       return 'vtt_tool';
       if (h === 'shiftrpg.com') return 'shift_funnel';
       return 'other';

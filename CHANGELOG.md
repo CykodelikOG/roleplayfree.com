@@ -1,5 +1,25 @@
 # Changelog
 
+## v2.2 - 2026-10-06
+Play Now block at the top of the homepage. Three honest routes into a game.
+Files: src/components/PlayNow.astro (new), src/components/Analytics.astro, src/content/site-content.json, src/pages/index.astro.
+- **Why:** GA4 lifetime shows 77% bounce, an 18 second average visit, every session landing on `/` and not one ever reaching a second page. The homepage was asking a newcomer to read eleven system cards and choose. This gives them one action instead.
+- PlayNow.astro: new block placed above the Hero, after ShiftBanner. All copy and links live in site-content.json under `playNow`, per the project file-structure rule.
+- Three options, ordered on Peter's call: **Roll20 Pick Up Games first** ("if a game is running, a game is running"), then Friends and Fables, then Perchance AI RPG.
+- Each option states **what you get and what the catch is at equal visual weight**, plus badges for cost, whether an account is needed, and where it runs out. Nobody should hit a turn limit or a paywall by surprise, which was Peter's stated qualifier after being burned by AI GMs that give ten replies then ask for money.
+- Perchance carries an explicit honesty panel: not vetted, not ours, sits on a community platform that hosts adult material elsewhere and is often network-blocked. Listed because it is the only option that asks nothing of the visitor at all.
+- Roll20 carries its own panel: Pick Up Games are the fast lane, ordinary Roll20 LFG means waiting weeks.
+- CTA: "Play now for free" with a per-option subtitle, full width, forest green #2D5016 with a gold #C9A84C outline. Both colours are existing system card accents, so the button is loud without introducing a new colour.
+- **No third-party logos, deliberately.** Roll20's terms forbid use of their marks without prior written consent; Friends and Fables and Perchance publish no brand assets; and a Perchance logo would imply an endorsement that is explicitly withheld. Icons are inline SVG in site accents, honouring the no-emoji design rule.
+- Analytics.astro: AI game masters split out of the VTT bucket into a new `ai_gm` class. Previously Roll20 and both AI options all reported as `vtt_tool`, which would have made this block's reports unreadable.
+- site-content.json: **LoreKeeper factual fix.** The site claimed "the host's plan covers a session, guests don't need their own subscription". Their site states each player needs their own free account and uses their own daily turn cap. Corrected.
+
+**Verification:** build clean at 14 pages; 3 CTAs render in the block in the intended order; all three tracked as `outbound_click` with `section="play-now"` and the correct `link_class`; existing affiliate and system-link tracking unaffected; 15 of 15 jsdom checks passing.
+
+**Open, needs Peter:** whether the DriveThruRPG affiliate ID 819957 extends to Roll20 links. Roll20 and OneBookShelf/DriveThruRPG combined in 2023 under shared ownership, and DriveThru runs a partner page titled "Roll20 and DriveThru Graphics" for linking to Roll20, but the partner help centre requires a login. The Roll20 link ships with **no affiliate parameter** rather than a guessed one. Contact is matt@roll20.net, the same person who approved affiliate 819957. Note the Pick Up Games listing is not a purchase page, so it likely would not earn regardless.
+
+**Also open:** Questwright remains the lead entry in the AI Game Masters section despite being a waitlist. Peter's call, on the basis that a short waitlist is acceptable for a free alpha. It is not in the Play Now block, so nothing here depends on it.
+
 ## v2.1 - 2026-10-06
 Custom event tracking. The site can finally measure behaviour, not just page views.
 Files: src/components/Analytics.astro (new), src/layouts/Layout.astro, src/pages/systems/[id].astro.

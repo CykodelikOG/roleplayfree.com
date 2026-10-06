@@ -4,6 +4,120 @@
     "amazon_tag": "cykodelik-21",
     "startplaying_referral": "https://startplaying.games/referral/cmp3vmklg007wjl046wylrjgn"
   },
+  "playNow": {
+    "heading": "Don't want to research? Just click these links and play.",
+    "intro": "Three ways to be in a game in the next few minutes, all free to start. We tell you upfront what each one costs you, what it asks for, and where it runs out. Everything else on this page is for when you want to choose properly.",
+    "footnote": "None of these pay us anything. If you would rather pick a system first and do it properly, the games are below and the quiz takes eight questions.",
+    "options": [
+      {
+        "id": "roll20",
+        "name": "Roll20 Pick Up Games",
+        "icon": "people",
+        "accent": "#2D5016",
+        "what": "Real games with real people, starting in the next couple of hours. You join straight in instead of applying and waiting.",
+        "badges": [
+          {
+            "text": "Free",
+            "tone": "free"
+          },
+          {
+            "text": "Account needed",
+            "tone": "reg"
+          },
+          {
+            "text": "Only if one is running",
+            "tone": "warn"
+          }
+        ],
+        "get": [
+          "Actual people at the table, not an AI",
+          "Skips the usual application and approval wait",
+          "Free to join and free to play"
+        ],
+        "catch": [
+          "Games only appear from about two hours before they start, so the list is sometimes empty",
+          "You need a free Roll20 account",
+          "Much better on a computer than a phone"
+        ],
+        "note": "Worth knowing: this is the fast lane, not normal Roll20. Applying to ordinary Roll20 games usually means waiting weeks to be accepted. Pick Up Games are the exception, and most people never find them.",
+        "ctaSub": "with real people, if a game is running",
+        "href": "https://app.roll20.net/lfg/search/"
+      },
+      {
+        "id": "fables",
+        "name": "Friends and Fables",
+        "icon": "chat",
+        "accent": "#4A7C59",
+        "what": "An AI game master that runs proper D&D-style play in your browser. Best of the three if you want it to feel like a real game.",
+        "badges": [
+          {
+            "text": "Free tier",
+            "tone": "free"
+          },
+          {
+            "text": "Account needed",
+            "tone": "reg"
+          },
+          {
+            "text": "25 turns a day",
+            "tone": "reg"
+          }
+        ],
+        "get": [
+          "25 turns a day free, which is a real session and not a taster",
+          "Remembers your character and story between visits",
+          "One friend can play with you at no cost",
+          "Runs in a phone browser"
+        ],
+        "catch": [
+          "You have to make an account before you play",
+          "25 turns will not cover a long sitting",
+          "Unlimited play starts at $19.95 a month"
+        ],
+        "note": null,
+        "ctaSub": "with an AI game master",
+        "href": "https://fables.gg"
+      },
+      {
+        "id": "perchance",
+        "name": "Perchance AI RPG",
+        "icon": "terminal",
+        "accent": "#B07A2B",
+        "what": "A free text adventure with an AI running the story. No account, no card, no limit. Click the link and you are playing.",
+        "badges": [
+          {
+            "text": "Free",
+            "tone": "free"
+          },
+          {
+            "text": "No account",
+            "tone": "free"
+          },
+          {
+            "text": "No daily limit",
+            "tone": "free"
+          },
+          {
+            "text": "Not vetted by us",
+            "tone": "warn"
+          }
+        ],
+        "get": [
+          "Nothing to sign up for. No login, no email, no card",
+          "No cap on how long you play",
+          "Runs in a phone browser"
+        ],
+        "catch": [
+          "Storytelling rather than a real rules engine. No proper dice or character sheet",
+          "Nothing is saved, so treat each game as a one-off",
+          "Often blocked on school and work networks"
+        ],
+        "note": "Being straight with you: we have not vetted this one and we do not run it. It sits on a community site that hosts adult material elsewhere, which is why networks block it. We list it because it is the only option here that asks nothing of you at all. If that is not for you, use one of the other two.",
+        "ctaSub": "with no sign-up at all",
+        "href": "https://perchance.org/ai-rpg"
+      }
+    ]
+  },
   "nav": {
     "siteName": "roleplayfree",
     "systemsDropdown": [
@@ -1220,7 +1334,7 @@
       "name": "LoreKeeper",
       "href": "https://lore-keeper.com",
       "linkLabel": "Free tier, registration required",
-      "pricingNote": "Free tier: 20 turns per day, no card required. Paid tiers unlock more. The host's plan covers a session. Guests don't need their own subscription.",
+      "pricingNote": "Free tier: 20 turns per day per player, no card required. Each player needs their own free account and uses their own daily turn cap. Paid tiers unlock more.",
       "description": "AI GM with persistent campaigns and multiplayer up to six players."
     },
     {
