@@ -1,0 +1,354 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import content from '../../content/site-content.json';
+
+export function getStaticPaths() {
+  return content.systems.map((system) => ({
+    params: { id: (system as any).slug },
+    props: { system },
+  }));
+}
+
+interface System {
+  id: string;
+  slug: string;
+  metaDescription: string;
+  name: string;
+  tagline: string;
+  socialProof?: string | null;
+  accentColor: string;
+  vibe: string;
+  easyToLearn: string;
+  willIDie: string;
+  campaignLength: string;
+  dice: string[];
+  freeRules?: { label: string; href: string; linkLabel: string } | null;
+  paidLink?: { href: string; linkLabel: string } | null;
+  discord?: { label: string; href: string } | null;
+  edition_note?: string;
+}
+
+interface Props {
+  system: System;
+}
+
+const { system } = Astro.props;
+
+const sheets = (content.tools.characterSheets as any[]).filter(
+  (sheet) => sheet.systemIds?.includes(system.id)
+);
+
+const discordKey = system.id.startsWith('shadowrun') ? 'Shadowrun' : system.name;
+const discordEntry = content.discordServers.find((d) => d.system === discordKey);
+
+function getLabelClass(label: string) {
+  if (label === 'Paid') return 'link-label--paid';
+  if (label.includes('registration')) return 'link-label--free-reg';
+  return 'link-label--free';
+}
+
+const canonicalUrl = `https://roleplayfree.com/systems/${system.slug}/`;
+---
+
+<Layout
+  title={`How to start playing ${system.name} | roleplayfree.com`}
+  description={system.metaDescription}
+  ogUrl={canonicalUrl}
+  jsonLd={{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://roleplayfree.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Systems", "item": "https://roleplayfree.com/#systems" },
+      { "@type": "ListItem", "position": 3, "name": system.name, "item": canonicalUrl }
+    ]
+  }}
+>
+  <Nav />
+  <main>
+    <div class="sp-accent" style={`background: ${system.accentColor}`}></div>
+
+    <div class="container sp-container">
+
+      <nav class="sp-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/#systems">Systems</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{system.name}</span>
+      </nav>
+
+      <header class="sp-header">
+        <h1>{system.name}</h1>
+        <p class="sp-tagline">{system.tagline}</p>
+        {system.socialProof && (
+          <p class="sp-social-proof">{system.socialProof}</p>
+        )}
+      </header>
+
+      <section class="sp-stats" aria-label="Quick reference">
+        <div class="sp-stats-grid">
+          <div class="sp-stat">
+            <span class="sp-stat__label">Vibe</span>
+            <span class="sp-stat__value">{system.vibe}</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat__label">Easy to learn?</span>
+            <span class="sp-stat__value">{system.easyToLearn}</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat__label">Will my character die?</span>
+            <span class="sp-stat__value">{system.willIDie}</span>
+          </div>
+          <div class="sp-stat">
+            <span class="sp-stat__label">Campaign length</span>
+            <span class="sp-stat__value">{system.campaignLength}</span>
+          </div>
+        </div>
+        <p class="sp-dice">Dice: {system.dice.join(', ')}</p>
+        {system.edition_note && (
+          <p class="sp-edition-note">{system.edition_note}</p>
+        )}
+      </section>
+
+      <div class="sp-body">
+
+        <section class="sp-section">
+          <h2>Where to start</h2>
+          {system.freeRules ? (
+            <a href={system.freeRules.href} target="_blank" rel="noopener" class="sp-resource">
+              <span>{system.freeRules.label}</span>
+              <span class={`link-label ${getLabelClass(system.freeRules.linkLabel)}`}>{system.freeRules.linkLabel}</span>
+            </a>
+          ) : (
+            <p class="sp-note">No free rulebook for this system. The paid rulebook below is the starting point.</p>
+          )}
+          {system.paidLink && (
+            <a href={system.paidLink.href} target="_blank" rel="noopener" class="sp-resource">
+              <span>Buy the rulebook on DriveThruRPG</span>
+              <span class="link-label link-label--paid">Paid</span>
+            </a>
+          )}
+          {sheets.length > 0 && (
+            <div class="sp-sheets">
+              <h3>Character sheets</h3>
+              {sheets.map((sheet: any) => (
+                <a href={sheet.href} target="_blank" rel="noopener" class="sp-resource">
+                  <span>{sheet.name}</span>
+                  <span class={`link-label ${getLabelClass(sheet.linkLabel)}`}>{sheet.linkLabel}</span>
+                </a>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <section class="sp-section">
+          <h2>Find other players</h2>
+          {discordEntry?.href ? (
+            <a href={discordEntry.href} target="_blank" rel="noopener" class="sp-resource">
+              <span>{discordEntry.name}</span>
+            </a>
+          ) : (
+            <p>Search Discord for active {system.name} communities. The <a href="/#discord">Discord section</a> on the homepage has a starting list.</p>
+          )}
+          <p class="sp-lfg-note">A specific LFG post gets more responses than a vague one. The <a href="/#lfg">LFG guide</a> covers exactly what to write.</p>
+        </section>
+
+        <aside class="sp-quiz-cta" style={`border-left-color: ${system.accentColor}`}>
+          <p>Not sure {system.name} is right for you?</p>
+          <a href="/quiz/" class="btn btn--primary">Take the quiz</a>
+        </aside>
+
+        <a href="/#systems" class="sp-back">See all systems</a>
+
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .sp-accent {
+    height: 8px;
+    width: 100%;
+  }
+
+  .sp-container {
+    max-width: 780px;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .sp-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    list-style: none;
+  }
+  .sp-breadcrumb a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+  }
+  .sp-breadcrumb a:hover { text-decoration: underline; }
+  .sp-breadcrumb [aria-current] { color: var(--color-text); }
+
+  .sp-header {
+    margin-bottom: var(--space-lg);
+  }
+  .sp-tagline {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+    line-height: 1.65;
+  }
+  .sp-social-proof {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin-top: var(--space-xs);
+    margin-bottom: 0;
+  }
+
+  .sp-stats {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  .sp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+  }
+  .sp-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .sp-stat__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.2rem;
+  }
+  .sp-stat__value {
+    font-size: 0.92rem;
+  }
+  .sp-dice {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin: var(--space-xs) 0 0;
+  }
+  .sp-edition-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-xs);
+    margin-top: var(--space-xs);
+    margin-bottom: 0;
+  }
+
+  .sp-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .sp-section h2 {
+    margin-bottom: var(--space-md);
+  }
+  .sp-section h3 {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--color-text-muted);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+
+  .sp-resource {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    background: var(--color-bg-card);
+    font-size: 0.92rem;
+    transition: border-color 0.15s;
+  }
+  .sp-resource:hover {
+    border-color: var(--color-text);
+  }
+
+  .sp-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .sp-lfg-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+    margin-bottom: 0;
+  }
+  .sp-lfg-note a {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+
+  .sp-quiz-cta {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid;
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  .sp-quiz-cta p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .sp-back {
+    display: inline-block;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+  .sp-back:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+  .sp-back::before {
+    content: '\2190  ';
+  }
+
+  @media (max-width: 600px) {
+    .sp-stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .sp-quiz-cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

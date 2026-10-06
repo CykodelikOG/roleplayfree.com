@@ -2,6 +2,7 @@
 interface Props {
   system: {
     id: string;
+    slug?: string;
     name: string;
     tagline: string;
     socialProof?: string | null;
@@ -38,7 +39,11 @@ function getLabelClass(label: string) {
   ></div>
 
   <div class="system-card__body">
-    <h3 class="system-card__name">{system.name}</h3>
+    <h3 class="system-card__name">
+      {system.slug
+        ? <a href={`/systems/${system.slug}/`} class="system-card__name-link">{system.name}</a>
+        : system.name}
+    </h3>
     <p class="system-card__tagline">{system.tagline}</p>
 
     {system.socialProof && (
@@ -91,3 +96,13 @@ function getLabelClass(label: string) {
     </div>
   </div>
 </div>
+
+<style>
+  .system-card__name-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .system-card__name-link:hover {
+    text-decoration: underline;
+  }
+</style>

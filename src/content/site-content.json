@@ -4,28 +4,46 @@
     "amazon_tag": "cykodelik-21",
     "startplaying_referral": "https://startplaying.games/referral/cmp3vmklg007wjl046wylrjgn"
   },
-
   "nav": {
     "siteName": "roleplayfree",
     "systemsDropdown": [
-      { "label": "D&D 5e", "href": "#systems" },
-      { "label": "Vampire: The Masquerade", "href": "#systems" },
-      { "label": "Shadowrun", "href": "#systems" },
-      { "label": "Call of Cthulhu", "href": "#systems" }
+      {
+        "label": "D&D 5e",
+        "href": "/systems/dnd-5e/"
+      },
+      {
+        "label": "Vampire: The Masquerade",
+        "href": "/systems/vampire-the-masquerade/"
+      },
+      {
+        "label": "Shadowrun",
+        "href": "/systems/shadowrun-5e/"
+      },
+      {
+        "label": "Call of Cthulhu",
+        "href": "/systems/call-of-cthulhu/"
+      }
     ],
     "resourcesDropdown": [
-      { "label": "Free Rules", "href": "#free-rules" },
-      { "label": "Tools", "href": "#tools" },
-      { "label": "AI Game Masters", "href": "#ai-gms" }
+      {
+        "label": "Free Rules",
+        "href": "#free-rules"
+      },
+      {
+        "label": "Tools",
+        "href": "#tools"
+      },
+      {
+        "label": "AI Game Masters",
+        "href": "#ai-gms"
+      }
     ]
   },
-
   "shiftBanner": {
     "copy": "Something new is coming. SHIFT RPG: a system built for modern play.",
     "ctaLabel": "Find out more",
     "ctaHref": "https://shiftrpg.com"
   },
-
   "hero": {
     "lines": [
       "Tabletop RPGs are the best games you've never played.",
@@ -35,7 +53,6 @@
     "ctaLabel": "Skip straight to the games ↓",
     "ctaHref": "#systems"
   },
-
   "howToSteps": [
     {
       "number": 1,
@@ -62,8 +79,16 @@
       "heading": "Find a GM and start playing",
       "body": "Links to Discord LFG servers. Roll20 free account lets you play in the browser tonight.",
       "links": [
-        { "label": "Roll20", "href": "https://roll20.net", "linkLabel": "Free, registration required" },
-        { "label": "StartPlaying.games: skip the queue, get a professional GM this week", "href": "https://startplaying.games/referral/cmp3vmklg007wjl046wylrjgn", "linkLabel": "Paid" }
+        {
+          "label": "Roll20",
+          "href": "https://roll20.net",
+          "linkLabel": "Free, registration required"
+        },
+        {
+          "label": "StartPlaying.games: skip the queue, get a professional GM this week",
+          "href": "https://startplaying.games/referral/cmp3vmklg007wjl046wylrjgn",
+          "linkLabel": "Paid"
+        }
       ]
     },
     {
@@ -71,11 +96,14 @@
       "heading": "AI options exist",
       "body": "Not the same as playing with real people. No banter, no shared memory, no chaos. But if you need to roll dice this second, they're out there.",
       "links": [
-        { "label": "See AI Game Masters below", "href": "#ai-gms", "linkLabel": null }
+        {
+          "label": "See AI Game Masters below",
+          "href": "#ai-gms",
+          "linkLabel": null
+        }
       ]
     }
   ],
-
   "terminology": [
     {
       "term": "PC",
@@ -114,10 +142,11 @@
       "definition": "Looking For Group. What you post when you want to find players or a GM. You'll see LFG channels in most TTRPG Discord servers. A good LFG post is specific: system, timezone, availability, experience level."
     }
   ],
-
   "systems": [
     {
       "id": "dnd",
+      "slug": "dnd-5e",
+      "metaDescription": "How to start playing D&D 5e. Free rules on D&D Beyond, no purchase needed. The biggest tabletop RPG in the world. Playable in your first session.",
       "name": "D&D 5e",
       "tagline": "The one everyone's heard of. Be an edgy rogue, a righteous paladin, a monster-slaying barbarian. Fight things. Loot dungeons. Laugh it off in a tavern.",
       "socialProof": "As seen on Critical Role and Dimension 20. Free rules on D&D Beyond. No purchase required to start.",
@@ -127,14 +156,30 @@
       "easyToLearn": "Yes. Playable in one session.",
       "willIDie": "Rarely. D&D is forgiving by default.",
       "campaignLength": "One-shot to lifetime",
-      "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
-      "freeRules": { "label": "D&D Beyond", "href": "https://www.dndbeyond.com", "linkLabel": "Free, registration required" },
+      "dice": [
+        "d4",
+        "d6",
+        "d8",
+        "d10",
+        "d12",
+        "d20"
+      ],
+      "freeRules": {
+        "label": "D&D Beyond",
+        "href": "https://www.dndbeyond.com",
+        "linkLabel": "Free, registration required"
+      },
       "paidLink": null,
-      "discord": { "label": "D&D Discord servers", "href": "#discord" },
+      "discord": {
+        "label": "D&D Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Your answers describe a classic heroic adventure. D&D has the biggest community, the most resources, and a free ruleset you can open right now. Start here."
     },
     {
       "id": "vampire",
+      "slug": "vampire-the-masquerade",
+      "metaDescription": "How to start playing Vampire: The Masquerade. Gothic horror and political intrigue. You are dead, powerful, and slowly losing control. Free supplements from Paradox.",
       "name": "Vampire: The Masquerade",
       "tagline": "You're dead. You've been dead for three hundred years. Now you run the city, or you're trying to. Politics, betrayal, and the monster you're slowly becoming.",
       "socialProof": "If you've ever watched anything gothic and thought \"I want to be that\"? This is your game.",
@@ -144,15 +189,29 @@
       "easyToLearn": "Medium. The rules serve the story, not the other way around.",
       "willIDie": "Yes, and it'll mean something when it happens",
       "campaignLength": "Medium to long. Political intrigue needs time to breathe.",
-      "dice": ["d10 pool"],
-      "freeRules": { "label": "Free supplements at Paradox", "href": "https://www.paradoxinteractive.com", "linkLabel": "Free, downloads instantly" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/256795/vampire-the-masquerade-5th-edition?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "Vampire Discord servers", "href": "#discord" },
+      "dice": [
+        "d10 pool"
+      ],
+      "freeRules": {
+        "label": "Free supplements at Paradox",
+        "href": "https://www.paradoxinteractive.com",
+        "linkLabel": "Free, downloads instantly"
+      },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/256795/vampire-the-masquerade-5th-edition?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "Vampire Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "You want politics, power, and a character who wrestles with what they're becoming. Vampire puts all of that at the centre of every session.",
       "edition_note": "V5 is current. V20 is still widely played. Vampire: The Requiem is a separate game. Different lore, different clans, different world. Check which edition your group is running before buying."
     },
     {
       "id": "shadowrun",
+      "slug": "shadowrun-5e",
+      "metaDescription": "How to start playing Shadowrun 5e. Corporate dystopia meets magic and cybernetics. Crew-based criminal runs in a world that wants you dead. Free quickstart on DriveThruRPG.",
       "name": "Shadowrun 5e",
       "tagline": "Corporate dystopia. Cybernetic implants. Magic came back and nobody asked for it. You're a criminal for hire in a world that would rather you didn't exist. Run fast. Shoot straight. Never deal with a dragon.",
       "socialProof": "If Cyberpunk and fantasy had a baby and that baby had a shotgun.",
@@ -162,14 +221,28 @@
       "easyToLearn": "Hard, but worth it. The crunch is part of the flavour.",
       "willIDie": "Frequently. This world is not on your side.",
       "campaignLength": "Flexible. Single runs or full campaigns.",
-      "dice": ["d6 pool"],
-      "freeRules": { "label": "Official quickstart on DriveThruRPG", "href": "https://www.drivethrurpg.com/product/160161", "linkLabel": "Free, registration required" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/115985/shadowrun-fifth-edition-core-rulebook-master-index-edition?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "Shadowrun Discord servers", "href": "#discord" },
+      "dice": [
+        "d6 pool"
+      ],
+      "freeRules": {
+        "label": "Official quickstart on DriveThruRPG",
+        "href": "https://www.drivethrurpg.com/product/160161",
+        "linkLabel": "Free, registration required"
+      },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/115985/shadowrun-fifth-edition-core-rulebook-master-index-edition?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "Shadowrun Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Crew dynamics, corporate warfare, and a world that wants you dead. Shadowrun rewards players who plan and improvise in equal measure."
     },
     {
       "id": "shadowrun_anarchy",
+      "slug": "shadowrun-anarchy",
+      "metaDescription": "How to start playing Shadowrun Anarchy. Same cyberpunk world as Shadowrun 5e, half the rulebook, no dedicated GM needed. Fast to pick up and play.",
       "name": "Shadowrun Anarchy",
       "tagline": "Same world as Shadowrun. Same neon-drenched corporate nightmare. Half the rulebook. There's no GM. Players share the storytelling between them. If you want the flavour without the spreadsheet, start here.",
       "socialProof": null,
@@ -179,14 +252,24 @@
       "easyToLearn": "Yes, designed for fast pickup",
       "willIDie": "Yes. The world is still hostile, the rules are just kinder.",
       "campaignLength": "Short to medium. Fast and loose by design.",
-      "dice": ["d6 pool"],
+      "dice": [
+        "d6 pool"
+      ],
       "freeRules": null,
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/194759/shadowrun-anarchy?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "Shadowrun Discord servers", "href": "#discord" },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/194759/shadowrun-anarchy?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "Shadowrun Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Same world as Shadowrun, half the rulebook. Anarchy gets you into the cyberpunk fiction fast without the character-building spreadsheet."
     },
     {
       "id": "coc",
+      "slug": "call-of-cthulhu",
+      "metaDescription": "How to start playing Call of Cthulhu. Cosmic horror investigation RPG. Free quickstart includes The Haunting adventure. One of the simplest systems on this list.",
       "name": "Call of Cthulhu",
       "tagline": "You're not the hero. You're an accountant from Ohio who just found something in the library that cannot be unread. You will investigate. You will probably regret it.",
       "socialProof": "Cthulhu is everywhere: the memes, the plushies, the references. The game is better than all of them.",
@@ -196,14 +279,29 @@
       "easyToLearn": "Yes, one of the simplest systems on this list",
       "willIDie": "Yes. Or worse, go mad. Probably both.",
       "campaignLength": "Short to medium. Most scenarios are self-contained.",
-      "dice": ["d100", "d6"],
-      "freeRules": { "label": "Free quickstart including The Haunting adventure", "href": "https://www.chaosium.com/cthulhu-quickstart/", "linkLabel": "Free, downloads instantly" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/150997/call-of-cthulhu-7th-edition-keeper-s-rulebook?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "Call of Cthulhu Discord servers", "href": "#discord" },
+      "dice": [
+        "d100",
+        "d6"
+      ],
+      "freeRules": {
+        "label": "Free quickstart including The Haunting adventure",
+        "href": "https://www.chaosium.com/cthulhu-quickstart/",
+        "linkLabel": "Free, downloads instantly"
+      },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/150997/call-of-cthulhu-7th-edition-keeper-s-rulebook?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "Call of Cthulhu Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "You want mystery, dread, and the creeping certainty that you are not equipped for what you found. Call of Cthulhu delivers this in one of the most accessible systems on this list."
     },
     {
       "id": "pathfinder",
+      "slug": "pathfinder-2e",
+      "metaDescription": "How to start playing Pathfinder 2e. Tactical heroic fantasy with a full free ruleset at Archives of Nethys. More depth than D&D. No purchase required, ever.",
       "name": "Pathfinder 2e",
       "tagline": "D&D's more tactical sibling. Every choice matters, every build is deliberate, every combat is a puzzle. If you've outgrown 5e and want more depth. This is where you go next.",
       "socialProof": "Full free rules at Archives of Nethys. No purchase required, ever.",
@@ -213,14 +311,30 @@
       "easyToLearn": "Medium to hard. More options than D&D, well documented.",
       "willIDie": "Sometimes. More dangerous than D&D, less brutal than OSR systems.",
       "campaignLength": "Long. Built for epic progression.",
-      "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
-      "freeRules": { "label": "Archives of Nethys", "href": "https://2e.aonprd.com", "linkLabel": "Free, no registration" },
+      "dice": [
+        "d4",
+        "d6",
+        "d8",
+        "d10",
+        "d12",
+        "d20"
+      ],
+      "freeRules": {
+        "label": "Archives of Nethys",
+        "href": "https://2e.aonprd.com",
+        "linkLabel": "Free, no registration"
+      },
       "paidLink": null,
-      "discord": { "label": "Pathfinder Discord servers", "href": "#discord" },
+      "discord": {
+        "label": "Pathfinder Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "You want tactical depth and options that reward careful play. Pathfinder 2e has one of the most complete rulesets available, and the whole thing is free."
     },
     {
       "id": "fate",
+      "slug": "fate-core",
+      "metaDescription": "How to start playing FATE Core. Genre-agnostic storytelling RPG, completely free from Evil Hat. Bring any concept, any setting. Works for anything you throw at it.",
       "name": "FATE Core",
       "tagline": "No setting. No genre. No limits. FATE is a storytelling engine. You bring the world, it handles the rest. If you've got a concept that doesn't fit anything else, it fits here.",
       "socialProof": "Completely free. Pay what you want directly from the publisher.",
@@ -230,14 +344,28 @@
       "easyToLearn": "Medium. Simple rules, but thinking in aspects takes adjustment.",
       "willIDie": "Rarely. FATE is built for protagonists, not casualties.",
       "campaignLength": "Completely variable",
-      "dice": ["FATE dice (4 custom d6)"],
-      "freeRules": { "label": "Evil Hat pay-what-you-want", "href": "https://www.evilhat.com/store/fate-core/", "linkLabel": "Free, registration required" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/114903/fate-core-system?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "FATE Discord servers", "href": "#discord" },
+      "dice": [
+        "FATE dice (4 custom d6)"
+      ],
+      "freeRules": {
+        "label": "Evil Hat pay-what-you-want",
+        "href": "https://www.evilhat.com/store/fate-core/",
+        "linkLabel": "Free, registration required"
+      },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/114903/fate-core-system?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "FATE Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Your concept doesn't fit neatly into any other box. FATE is a storytelling engine that works for any genre and hands narrative control to the table."
     },
     {
       "id": "mothership",
+      "slug": "mothership",
+      "metaDescription": "How to start playing Mothership RPG. Sci-fi horror in deep space. Stripped-back rules and brutal consequences. The best sci-fi horror TTRPG running right now.",
       "name": "Mothership",
       "tagline": "Deep space. No heroes. Your ship's life support is failing, something got into the cargo hold, and the corporation doesn't care if you make it back. Survive if you can.",
       "socialProof": "Indie darling of the OSR scene. The best sci-fi horror RPG running right now.",
@@ -247,14 +375,26 @@
       "easyToLearn": "Yes, deliberately stripped back",
       "willIDie": "Absolutely and graphically",
       "campaignLength": "Short. Horror works best in concentrated doses.",
-      "dice": ["d10", "d100", "d6"],
+      "dice": [
+        "d10",
+        "d100",
+        "d6"
+      ],
       "freeRules": null,
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/484223/mothership-warden-s-operations-manual?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "Mothership Discord servers", "href": "#discord" },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/484223/mothership-warden-s-operations-manual?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "Mothership Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Survival horror in deep space with stripped-back rules and no pretense that you're the hero. Mothership does one thing and does it better than anything else."
     },
     {
       "id": "morkborg",
+      "slug": "mork-borg",
+      "metaDescription": "How to start playing Mork Borg. Grimdark fantasy where the world is ending. Brutally simple rules, free SRD at morkborg.com. Won every indie RPG award going.",
       "name": "Mörk Borg",
       "tagline": "The world is ending. It has been ending for a while. You are not special. Go find something worth dying for.",
       "socialProof": "Won every indie RPG award going. Also looks incredible on a table.",
@@ -264,14 +404,33 @@
       "easyToLearn": "Yes, brutally simple by design",
       "willIDie": "Yes. Repeatedly. That's the game.",
       "campaignLength": "Short. Characters rarely survive long enough for campaigns.",
-      "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
-      "freeRules": { "label": "Free SRD at morkborg.com", "href": "https://morkborg.com/content/", "linkLabel": "Free, no registration" },
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/295910/moerk-borg-english?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "Mörk Borg Discord servers", "href": "#discord" },
+      "dice": [
+        "d4",
+        "d6",
+        "d8",
+        "d10",
+        "d12",
+        "d20"
+      ],
+      "freeRules": {
+        "label": "Free SRD at morkborg.com",
+        "href": "https://morkborg.com/content/",
+        "linkLabel": "Free, no registration"
+      },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/295910/moerk-borg-english?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "Mörk Borg Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Short, brutal, and unlike anything else. Mörk Borg is a one-session death spiral with artwork that looks like a metal album cover. It earns every award it has won."
     },
     {
       "id": "cairn",
+      "slug": "cairn",
+      "metaDescription": "How to start playing Cairn. Old-school survival fantasy, completely free. No classes, no levels, just what you carry and how clever you are. One of the fastest TTRPGs to learn.",
       "name": "Cairn",
       "tagline": "Dark forests. Ancient ruins. No classes, no levels, just what you carry and how clever you are. Old school survival fantasy stripped to its bones.",
       "socialProof": "Free. Completely free. Always will be.",
@@ -281,14 +440,30 @@
       "easyToLearn": "Yes, one of the fastest to learn on this list",
       "willIDie": "Yes. The forest doesn't care about your backstory.",
       "campaignLength": "Short to medium. Moves fast.",
-      "dice": ["d4", "d6", "d8", "d10", "d12", "d20"],
-      "freeRules": { "label": "cairnrpg.com", "href": "https://cairnrpg.com", "linkLabel": "Free, no registration" },
+      "dice": [
+        "d4",
+        "d6",
+        "d8",
+        "d10",
+        "d12",
+        "d20"
+      ],
+      "freeRules": {
+        "label": "cairnrpg.com",
+        "href": "https://cairnrpg.com",
+        "linkLabel": "Free, no registration"
+      },
       "paidLink": null,
-      "discord": { "label": "Cairn Discord servers", "href": "#discord" },
+      "discord": {
+        "label": "Cairn Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Old-school survival fantasy with no filler. Cairn is completely free, one of the fastest to learn on this list, and trusts you to play smart."
     },
     {
       "id": "l5r",
+      "slug": "legend-of-the-five-rings",
+      "metaDescription": "How to start playing Legend of the Five Rings. Feudal Japanese fantasy where honour is currency. Unique d10 dice pool, deep political drama, lethal consequences.",
       "name": "Legend of the Five Rings",
       "tagline": "Feudal Japan. Samurai, courtiers, and monks in a world where honour is currency and a single wrong word ends your life faster than any blade.",
       "socialProof": "A dice system unlike anything else at the table. Rolling and reading them is half the experience.",
@@ -298,14 +473,21 @@
       "easyToLearn": "Medium to hard. The dice pool takes an hour to get comfortable with, and you'll want to know the factions before session one",
       "willIDie": "Yes, and honour demands you face it with dignity",
       "campaignLength": "Medium to long. The political web needs time to tangle.",
-      "dice": ["Custom d10 ring and skill dice"],
+      "dice": [
+        "Custom d10 ring and skill dice"
+      ],
       "freeRules": null,
-      "paidLink": { "href": "https://www.drivethrurpg.com/en/product/257004/legend-of-the-five-rings-core-rulebook?affiliate_id=819957", "linkLabel": "Paid" },
-      "discord": { "label": "L5R Discord servers", "href": "#discord" },
+      "paidLink": {
+        "href": "https://www.drivethrurpg.com/en/product/257004/legend-of-the-five-rings-core-rulebook?affiliate_id=819957",
+        "linkLabel": "Paid"
+      },
+      "discord": {
+        "label": "L5R Discord servers",
+        "href": "#discord"
+      },
       "quizResultWhy": "Political drama, honour as a game mechanic, and a world where one wrong word ends you faster than any blade. Legend of the Five Rings is unlike anything else on this list."
     }
   ],
-
   "quiz": {
     "title": "What tabletop RPG should you play?",
     "subtitle": "Eight questions. Honest answers. One recommendation, plus your runner-up.",
@@ -316,12 +498,58 @@
         "type": "single",
         "text": "When you imagine your ideal story, what's the setting?",
         "options": [
-          { "id": "A", "text": "Swords, magic, dragons. Classic high fantasy.", "weights": { "dnd": 3, "pathfinder": 3, "cairn": 2, "morkborg": 1 } },
-          { "id": "B", "text": "Dark city streets, rain on neon, corporate dystopia, cybernetic augmentation, guns and vehicles", "weights": { "shadowrun": 3, "shadowrun_anarchy": 3 } },
-          { "id": "C", "text": "Gothic horror: old mansions, political intrigue, things that go bump", "weights": { "vampire": 3, "coc": 2, "morkborg": 1 } },
-          { "id": "D", "text": "Deep space, alien worlds, the unknown frontier", "weights": { "mothership": 3, "fate": 2 } },
-          { "id": "E", "text": "Gritty survival: post-apocalypse, no heroes, just people trying to live", "weights": { "morkborg": 3, "cairn": 3, "mothership": 2, "coc": 1 } },
-          { "id": "F", "text": "Feudal honour: samurai, courtiers, a world where one wrong word ends you", "weights": { "l5r": 3 } }
+          {
+            "id": "A",
+            "text": "Swords, magic, dragons. Classic high fantasy.",
+            "weights": {
+              "dnd": 3,
+              "pathfinder": 3,
+              "cairn": 2,
+              "morkborg": 1
+            }
+          },
+          {
+            "id": "B",
+            "text": "Dark city streets, rain on neon, corporate dystopia, cybernetic augmentation, guns and vehicles",
+            "weights": {
+              "shadowrun": 3,
+              "shadowrun_anarchy": 3
+            }
+          },
+          {
+            "id": "C",
+            "text": "Gothic horror: old mansions, political intrigue, things that go bump",
+            "weights": {
+              "vampire": 3,
+              "coc": 2,
+              "morkborg": 1
+            }
+          },
+          {
+            "id": "D",
+            "text": "Deep space, alien worlds, the unknown frontier",
+            "weights": {
+              "mothership": 3,
+              "fate": 2
+            }
+          },
+          {
+            "id": "E",
+            "text": "Gritty survival: post-apocalypse, no heroes, just people trying to live",
+            "weights": {
+              "morkborg": 3,
+              "cairn": 3,
+              "mothership": 2,
+              "coc": 1
+            }
+          },
+          {
+            "id": "F",
+            "text": "Feudal honour: samurai, courtiers, a world where one wrong word ends you",
+            "weights": {
+              "l5r": 3
+            }
+          }
         ]
       },
       {
@@ -330,13 +558,73 @@
         "text": "When you sit down at the table, what do you actually want to do?",
         "hint": "Pick up to four.",
         "options": [
-          { "id": "A", "text": "Fight: tactical combat, knowing my build cold", "weights": { "dnd": 3, "pathfinder": 3, "shadowrun": 2, "mothership": 1 } },
-          { "id": "B", "text": "Talk: negotiate, manipulate, charm, deceive", "weights": { "vampire": 3, "shadowrun": 2, "l5r": 2, "fate": 1 } },
-          { "id": "C", "text": "Investigate: uncover mysteries and secrets", "weights": { "coc": 3, "vampire": 2, "fate": 1 } },
-          { "id": "D", "text": "Become someone: deep character, personal story arc", "weights": { "vampire": 3, "l5r": 3, "fate": 2, "dnd": 1 } },
-          { "id": "E", "text": "Build and acquire: resources, territory, power", "weights": { "shadowrun": 3, "vampire": 2, "l5r": 2 } },
-          { "id": "F", "text": "Cause chaos: unpredictable, impulsive, consequences be damned", "weights": { "dnd": 2, "shadowrun_anarchy": 2, "morkborg": 2 } },
-          { "id": "G", "text": "All of this sounds good", "weights": { "dnd": 2, "pathfinder": 2, "shadowrun": 2, "fate": 2 } }
+          {
+            "id": "A",
+            "text": "Fight: tactical combat, knowing my build cold",
+            "weights": {
+              "dnd": 3,
+              "pathfinder": 3,
+              "shadowrun": 2,
+              "mothership": 1
+            }
+          },
+          {
+            "id": "B",
+            "text": "Talk: negotiate, manipulate, charm, deceive",
+            "weights": {
+              "vampire": 3,
+              "shadowrun": 2,
+              "l5r": 2,
+              "fate": 1
+            }
+          },
+          {
+            "id": "C",
+            "text": "Investigate: uncover mysteries and secrets",
+            "weights": {
+              "coc": 3,
+              "vampire": 2,
+              "fate": 1
+            }
+          },
+          {
+            "id": "D",
+            "text": "Become someone: deep character, personal story arc",
+            "weights": {
+              "vampire": 3,
+              "l5r": 3,
+              "fate": 2,
+              "dnd": 1
+            }
+          },
+          {
+            "id": "E",
+            "text": "Build and acquire: resources, territory, power",
+            "weights": {
+              "shadowrun": 3,
+              "vampire": 2,
+              "l5r": 2
+            }
+          },
+          {
+            "id": "F",
+            "text": "Cause chaos: unpredictable, impulsive, consequences be damned",
+            "weights": {
+              "dnd": 2,
+              "shadowrun_anarchy": 2,
+              "morkborg": 2
+            }
+          },
+          {
+            "id": "G",
+            "text": "All of this sounds good",
+            "weights": {
+              "dnd": 2,
+              "pathfinder": 2,
+              "shadowrun": 2,
+              "fate": 2
+            }
+          }
         ]
       },
       {
@@ -344,10 +632,45 @@
         "type": "single",
         "text": "How do you feel about rules and mechanics?",
         "options": [
-          { "id": "A", "text": "I want deep mechanics. I like knowing exactly how everything works.", "weights": { "pathfinder": 3, "shadowrun": 3, "l5r": 2, "dnd": 1 } },
-          { "id": "B", "text": "I want enough rules to feel fair but I don't want homework", "weights": { "dnd": 3, "vampire": 3, "shadowrun": 2, "coc": 2 } },
-          { "id": "C", "text": "Get out of my way. I want to roleplay, not do maths.", "weights": { "fate": 3, "shadowrun_anarchy": 3, "cairn": 2, "morkborg": 2 } },
-          { "id": "D", "text": "I've never played before. I need something that teaches me as I go.", "weights": { "dnd": 3, "coc": 2, "cairn": 2 } }
+          {
+            "id": "A",
+            "text": "I want deep mechanics. I like knowing exactly how everything works.",
+            "weights": {
+              "pathfinder": 3,
+              "shadowrun": 3,
+              "l5r": 2,
+              "dnd": 1
+            }
+          },
+          {
+            "id": "B",
+            "text": "I want enough rules to feel fair but I don't want homework",
+            "weights": {
+              "dnd": 3,
+              "vampire": 3,
+              "shadowrun": 2,
+              "coc": 2
+            }
+          },
+          {
+            "id": "C",
+            "text": "Get out of my way. I want to roleplay, not do maths.",
+            "weights": {
+              "fate": 3,
+              "shadowrun_anarchy": 3,
+              "cairn": 2,
+              "morkborg": 2
+            }
+          },
+          {
+            "id": "D",
+            "text": "I've never played before. I need something that teaches me as I go.",
+            "weights": {
+              "dnd": 3,
+              "coc": 2,
+              "cairn": 2
+            }
+          }
         ]
       },
       {
@@ -355,13 +678,67 @@
         "type": "single",
         "text": "Who do you want to be at the table?",
         "options": [
-          { "id": "A", "text": "A hero, maybe flawed, but fundamentally trying to do good", "weights": { "dnd": 3, "pathfinder": 2, "coc": 1 } },
-          { "id": "B", "text": "A survivor: morality is a luxury, staying alive isn't", "weights": { "morkborg": 3, "cairn": 3, "mothership": 2 } },
-          { "id": "C", "text": "A monster: powerful, dangerous, wrestling with what that means", "weights": { "vampire": 3, "coc": 1 } },
-          { "id": "D", "text": "An operator: professional, skilled, the job comes first", "weights": { "shadowrun": 3, "shadowrun_anarchy": 2 } },
-          { "id": "E", "text": "A wildcard. I genuinely don't know what my character will do next.", "weights": { "fate": 3, "shadowrun_anarchy": 2, "dnd": 1 } },
-          { "id": "F", "text": "The joker: comic relief, chaos merchant, the one who makes the table laugh", "weights": { "dnd": 2, "pathfinder": 2, "fate": 1 } },
-          { "id": "G", "text": "A builder: networks, influence, power, politics. I want to own the throne, or build a better world trying.", "weights": { "vampire": 3, "shadowrun": 2, "l5r": 3 } }
+          {
+            "id": "A",
+            "text": "A hero, maybe flawed, but fundamentally trying to do good",
+            "weights": {
+              "dnd": 3,
+              "pathfinder": 2,
+              "coc": 1
+            }
+          },
+          {
+            "id": "B",
+            "text": "A survivor: morality is a luxury, staying alive isn't",
+            "weights": {
+              "morkborg": 3,
+              "cairn": 3,
+              "mothership": 2
+            }
+          },
+          {
+            "id": "C",
+            "text": "A monster: powerful, dangerous, wrestling with what that means",
+            "weights": {
+              "vampire": 3,
+              "coc": 1
+            }
+          },
+          {
+            "id": "D",
+            "text": "An operator: professional, skilled, the job comes first",
+            "weights": {
+              "shadowrun": 3,
+              "shadowrun_anarchy": 2
+            }
+          },
+          {
+            "id": "E",
+            "text": "A wildcard. I genuinely don't know what my character will do next.",
+            "weights": {
+              "fate": 3,
+              "shadowrun_anarchy": 2,
+              "dnd": 1
+            }
+          },
+          {
+            "id": "F",
+            "text": "The joker: comic relief, chaos merchant, the one who makes the table laugh",
+            "weights": {
+              "dnd": 2,
+              "pathfinder": 2,
+              "fate": 1
+            }
+          },
+          {
+            "id": "G",
+            "text": "A builder: networks, influence, power, politics. I want to own the throne, or build a better world trying.",
+            "weights": {
+              "vampire": 3,
+              "shadowrun": 2,
+              "l5r": 3
+            }
+          }
         ]
       },
       {
@@ -369,12 +746,59 @@
         "type": "single",
         "text": "When things go wrong, and they will, how does your character handle it?",
         "options": [
-          { "id": "A", "text": "Fight through it: aggression, power, direct confrontation", "weights": { "dnd": 3, "pathfinder": 2, "morkborg": 2 } },
-          { "id": "B", "text": "Talk your way out: lies, charm, negotiation", "weights": { "vampire": 3, "shadowrun": 2, "l5r": 2 } },
-          { "id": "C", "text": "Disappear: disengage, regroup, come back smarter", "weights": { "shadowrun": 3, "cairn": 2 } },
-          { "id": "D", "text": "Sacrifice something: relationships, morality, resources", "weights": { "vampire": 2, "mothership": 2, "coc": 2 } },
-          { "id": "E", "text": "Adapt and improvise. No plan survives contact with the enemy.", "weights": { "shadowrun_anarchy": 3, "shadowrun": 2, "fate": 2 } },
-          { "id": "F", "text": "Rally others: my strength is in who I know and who trusts me", "weights": { "vampire": 3, "l5r": 3, "shadowrun": 1 } }
+          {
+            "id": "A",
+            "text": "Fight through it: aggression, power, direct confrontation",
+            "weights": {
+              "dnd": 3,
+              "pathfinder": 2,
+              "morkborg": 2
+            }
+          },
+          {
+            "id": "B",
+            "text": "Talk your way out: lies, charm, negotiation",
+            "weights": {
+              "vampire": 3,
+              "shadowrun": 2,
+              "l5r": 2
+            }
+          },
+          {
+            "id": "C",
+            "text": "Disappear: disengage, regroup, come back smarter",
+            "weights": {
+              "shadowrun": 3,
+              "cairn": 2
+            }
+          },
+          {
+            "id": "D",
+            "text": "Sacrifice something: relationships, morality, resources",
+            "weights": {
+              "vampire": 2,
+              "mothership": 2,
+              "coc": 2
+            }
+          },
+          {
+            "id": "E",
+            "text": "Adapt and improvise. No plan survives contact with the enemy.",
+            "weights": {
+              "shadowrun_anarchy": 3,
+              "shadowrun": 2,
+              "fate": 2
+            }
+          },
+          {
+            "id": "F",
+            "text": "Rally others: my strength is in who I know and who trusts me",
+            "weights": {
+              "vampire": 3,
+              "l5r": 3,
+              "shadowrun": 1
+            }
+          }
         ]
       },
       {
@@ -382,12 +806,60 @@
         "type": "single",
         "text": "What kind of story do you actually want to tell?",
         "options": [
-          { "id": "A", "text": "Me against the world: personal struggle, internal demons, who am I becoming", "weights": { "vampire": 3, "coc": 2, "mothership": 1 } },
-          { "id": "B", "text": "Us against the world: crew dynamics, loyalty, pulling off the impossible together", "weights": { "shadowrun": 3, "dnd": 2, "pathfinder": 1 } },
-          { "id": "C", "text": "Uncovering the truth: conspiracies, mysteries, nothing is what it seems", "weights": { "coc": 3, "vampire": 2, "l5r": 1 } },
-          { "id": "D", "text": "Climbing the ladder: reputation, power, becoming untouchable", "weights": { "vampire": 2, "shadowrun": 2, "l5r": 3 } },
-          { "id": "E", "text": "Surviving the world: it's hostile, it's brutal, just getting through is enough", "weights": { "morkborg": 3, "cairn": 3, "mothership": 2 } },
-          { "id": "F", "text": "Changing the world: my character will leave a mark, for better or worse", "weights": { "vampire": 3, "shadowrun": 2, "pathfinder": 1 } }
+          {
+            "id": "A",
+            "text": "Me against the world: personal struggle, internal demons, who am I becoming",
+            "weights": {
+              "vampire": 3,
+              "coc": 2,
+              "mothership": 1
+            }
+          },
+          {
+            "id": "B",
+            "text": "Us against the world: crew dynamics, loyalty, pulling off the impossible together",
+            "weights": {
+              "shadowrun": 3,
+              "dnd": 2,
+              "pathfinder": 1
+            }
+          },
+          {
+            "id": "C",
+            "text": "Uncovering the truth: conspiracies, mysteries, nothing is what it seems",
+            "weights": {
+              "coc": 3,
+              "vampire": 2,
+              "l5r": 1
+            }
+          },
+          {
+            "id": "D",
+            "text": "Climbing the ladder: reputation, power, becoming untouchable",
+            "weights": {
+              "vampire": 2,
+              "shadowrun": 2,
+              "l5r": 3
+            }
+          },
+          {
+            "id": "E",
+            "text": "Surviving the world: it's hostile, it's brutal, just getting through is enough",
+            "weights": {
+              "morkborg": 3,
+              "cairn": 3,
+              "mothership": 2
+            }
+          },
+          {
+            "id": "F",
+            "text": "Changing the world: my character will leave a mark, for better or worse",
+            "weights": {
+              "vampire": 3,
+              "shadowrun": 2,
+              "pathfinder": 1
+            }
+          }
         ]
       },
       {
@@ -395,11 +867,52 @@
         "type": "single",
         "text": "Let's talk about dice. How do you feel about them?",
         "options": [
-          { "id": "A", "text": "Give me ALL of them: d4 d6 d8 d10 d12 d20, the weird ones, the pretty ones. I want a bag that rattles.", "weights": { "dnd": 3, "pathfinder": 3, "coc": 2, "morkborg": 2, "cairn": 2 } },
-          { "id": "B", "text": "I need dice at the table: rolling a handful and counting successes is half the fun", "weights": { "shadowrun": 3, "l5r": 3, "vampire": 2 } },
-          { "id": "C", "text": "One type of die is fine: keep it simple, same die every time", "weights": { "shadowrun_anarchy": 2, "fate": 2, "cairn": 2 } },
-          { "id": "D", "text": "Dice are fine but I could take or leave them", "weights": { "vampire": 2, "fate": 2, "mothership": 1 } },
-          { "id": "E", "text": "Please don't make me do dice maths", "weights": { "fate": 3, "shadowrun_anarchy": 2 } }
+          {
+            "id": "A",
+            "text": "Give me ALL of them: d4 d6 d8 d10 d12 d20, the weird ones, the pretty ones. I want a bag that rattles.",
+            "weights": {
+              "dnd": 3,
+              "pathfinder": 3,
+              "coc": 2,
+              "morkborg": 2,
+              "cairn": 2
+            }
+          },
+          {
+            "id": "B",
+            "text": "I need dice at the table: rolling a handful and counting successes is half the fun",
+            "weights": {
+              "shadowrun": 3,
+              "l5r": 3,
+              "vampire": 2
+            }
+          },
+          {
+            "id": "C",
+            "text": "One type of die is fine: keep it simple, same die every time",
+            "weights": {
+              "shadowrun_anarchy": 2,
+              "fate": 2,
+              "cairn": 2
+            }
+          },
+          {
+            "id": "D",
+            "text": "Dice are fine but I could take or leave them",
+            "weights": {
+              "vampire": 2,
+              "fate": 2,
+              "mothership": 1
+            }
+          },
+          {
+            "id": "E",
+            "text": "Please don't make me do dice maths",
+            "weights": {
+              "fate": 3,
+              "shadowrun_anarchy": 2
+            }
+          }
         ]
       },
       {
@@ -407,62 +920,287 @@
         "type": "single",
         "text": "One last thing. How do you feel about conflict with other players?",
         "options": [
-          { "id": "A", "text": "Love it: I want to scheme against, betray, and outmanoeuvre the people I'm sitting with", "weights": { "vampire": 3, "l5r": 3, "shadowrun": 1 } },
-          { "id": "B", "text": "Occasionally fine. If it emerges naturally from the story, great.", "weights": { "vampire": 2, "shadowrun": 2, "coc": 1 } },
-          { "id": "C", "text": "I'd rather not. We're a team working against the world.", "weights": { "shadowrun": 3, "dnd": 3, "pathfinder": 2, "mothership": 2 } },
-          { "id": "D", "text": "Hard no. If my character gets stabbed in the back by another player, I'm going home.", "weights": { "dnd": 3, "pathfinder": 2, "cairn": 2, "fate": 2 } }
+          {
+            "id": "A",
+            "text": "Love it: I want to scheme against, betray, and outmanoeuvre the people I'm sitting with",
+            "weights": {
+              "vampire": 3,
+              "l5r": 3,
+              "shadowrun": 1
+            }
+          },
+          {
+            "id": "B",
+            "text": "Occasionally fine. If it emerges naturally from the story, great.",
+            "weights": {
+              "vampire": 2,
+              "shadowrun": 2,
+              "coc": 1
+            }
+          },
+          {
+            "id": "C",
+            "text": "I'd rather not. We're a team working against the world.",
+            "weights": {
+              "shadowrun": 3,
+              "dnd": 3,
+              "pathfinder": 2,
+              "mothership": 2
+            }
+          },
+          {
+            "id": "D",
+            "text": "Hard no. If my character gets stabbed in the back by another player, I'm going home.",
+            "weights": {
+              "dnd": 3,
+              "pathfinder": 2,
+              "cairn": 2,
+              "fate": 2
+            }
+          }
         ]
       }
     ]
   },
-
   "discordServers": [
-    { "system": "D&D 5e", "name": "D&D Beyond Discord", "href": "https://discord.gg/dnd", "description": "Official D&D Beyond server. Active LFG channel.", "searchHref": "https://disboard.org/search?keyword=dnd+5e" },
-    { "system": "Pathfinder 2e", "name": "Pathfinder 2e Discord", "href": "https://discord.gg/pathfinder-second-edition", "description": "Official Paizo community server.", "searchHref": "https://disboard.org/search?keyword=pathfinder+2e" },
-    { "system": "Vampire: The Masquerade", "name": "World of Darkness Discord", "href": "https://discord.gg/worldofdarkness", "description": "All WoD games. Good LFG and lore discussion.", "searchHref": "https://disboard.org/search?keyword=vampire+the+masquerade" },
-    { "system": "Call of Cthulhu", "name": "Chaosium Discord", "href": "https://discord.gg/chaosium", "description": "Official Chaosium server. CoC and RuneQuest.", "searchHref": "https://disboard.org/search?keyword=call+of+cthulhu" },
-    { "system": "Shadowrun", "name": "Shadowrun Discord", "href": "https://discord.gg/shadowrun", "description": "Rules help, LFG, and setting discussion.", "searchHref": "https://disboard.org/search?keyword=shadowrun" },
-    { "system": "FATE Core", "name": "FATE RPG Discord", "href": "https://discord.gg/faterpg", "description": "FATE Core and all derivatives.", "searchHref": "https://disboard.org/search?keyword=fate+rpg" },
-    { "system": "Mothership", "name": null, "href": null, "description": null, "searchHref": "https://disboard.org/search?keyword=mothership+rpg" },
-    { "system": "Mörk Borg", "name": null, "href": null, "description": null, "searchHref": "https://disboard.org/search?keyword=mork+borg" },
-    { "system": "Cairn", "name": null, "href": null, "description": null, "searchHref": "https://disboard.org/search?keyword=cairn+rpg" },
-    { "system": "Legend of the Five Rings", "name": null, "href": null, "description": null, "searchHref": "https://disboard.org/search?keyword=legend+five+rings" },
-    { "system": "General LFG", "name": "r/lfg Discord", "href": "https://discord.gg/lfg", "description": "System-agnostic LFG. Largest general RPG matchmaking server.", "searchHref": "https://disboard.org/search?keyword=tabletop+rpg+lfg" }
+    {
+      "system": "D&D 5e",
+      "name": "D&D Beyond Discord",
+      "href": "https://discord.gg/dnd",
+      "description": "Official D&D Beyond server. Active LFG channel.",
+      "searchHref": "https://disboard.org/search?keyword=dnd+5e"
+    },
+    {
+      "system": "Pathfinder 2e",
+      "name": "Pathfinder 2e Discord",
+      "href": "https://discord.gg/pathfinder-second-edition",
+      "description": "Official Paizo community server.",
+      "searchHref": "https://disboard.org/search?keyword=pathfinder+2e"
+    },
+    {
+      "system": "Vampire: The Masquerade",
+      "name": "World of Darkness Discord",
+      "href": "https://discord.gg/worldofdarkness",
+      "description": "All WoD games. Good LFG and lore discussion.",
+      "searchHref": "https://disboard.org/search?keyword=vampire+the+masquerade"
+    },
+    {
+      "system": "Call of Cthulhu",
+      "name": "Chaosium Discord",
+      "href": "https://discord.gg/chaosium",
+      "description": "Official Chaosium server. CoC and RuneQuest.",
+      "searchHref": "https://disboard.org/search?keyword=call+of+cthulhu"
+    },
+    {
+      "system": "Shadowrun",
+      "name": "Shadowrun Discord",
+      "href": "https://discord.gg/shadowrun",
+      "description": "Rules help, LFG, and setting discussion.",
+      "searchHref": "https://disboard.org/search?keyword=shadowrun"
+    },
+    {
+      "system": "FATE Core",
+      "name": "FATE RPG Discord",
+      "href": "https://discord.gg/faterpg",
+      "description": "FATE Core and all derivatives.",
+      "searchHref": "https://disboard.org/search?keyword=fate+rpg"
+    },
+    {
+      "system": "Mothership",
+      "name": null,
+      "href": null,
+      "description": null,
+      "searchHref": "https://disboard.org/search?keyword=mothership+rpg"
+    },
+    {
+      "system": "Mörk Borg",
+      "name": null,
+      "href": null,
+      "description": null,
+      "searchHref": "https://disboard.org/search?keyword=mork+borg"
+    },
+    {
+      "system": "Cairn",
+      "name": null,
+      "href": null,
+      "description": null,
+      "searchHref": "https://disboard.org/search?keyword=cairn+rpg"
+    },
+    {
+      "system": "Legend of the Five Rings",
+      "name": null,
+      "href": null,
+      "description": null,
+      "searchHref": "https://disboard.org/search?keyword=legend+five+rings"
+    },
+    {
+      "system": "General LFG",
+      "name": "r/lfg Discord",
+      "href": "https://discord.gg/lfg",
+      "description": "System-agnostic LFG. Largest general RPG matchmaking server.",
+      "searchHref": "https://disboard.org/search?keyword=tabletop+rpg+lfg"
+    }
   ],
-
   "freeRules": [
-    { "name": "D&D 5e Free Rules", "href": "https://www.dndbeyond.com/sources/dnd/free-rules", "linkLabel": "Free, registration required", "hosted": false },
-    { "name": "Pathfinder 2e: Archives of Nethys", "href": "https://2e.aonprd.com", "linkLabel": "Free, no registration", "hosted": false },
-    { "name": "FATE Core", "href": "https://www.evilhat.com/store/fate-core/", "linkLabel": "Free, registration required", "hosted": false },
-    { "name": "Shadowrun 5e Quickstart", "href": "https://www.drivethrurpg.com/product/160161", "linkLabel": "Free, registration required", "hosted": false },
-    { "name": "Call of Cthulhu Quickstart + The Haunting", "href": "https://www.chaosium.com/cthulhu-quickstart/", "linkLabel": "Free, downloads instantly", "hosted": false },
-    { "name": "Cairn Full Rules", "href": "https://cairnrpg.com", "linkLabel": "Free, no registration", "hosted": false },
-    { "name": "Mörk Borg SRD", "href": "https://morkborg.com/content/", "linkLabel": "Free, no registration", "hosted": false }
+    {
+      "name": "D&D 5e Free Rules",
+      "href": "https://www.dndbeyond.com/sources/dnd/free-rules",
+      "linkLabel": "Free, registration required",
+      "hosted": false
+    },
+    {
+      "name": "Pathfinder 2e: Archives of Nethys",
+      "href": "https://2e.aonprd.com",
+      "linkLabel": "Free, no registration",
+      "hosted": false
+    },
+    {
+      "name": "FATE Core",
+      "href": "https://www.evilhat.com/store/fate-core/",
+      "linkLabel": "Free, registration required",
+      "hosted": false
+    },
+    {
+      "name": "Shadowrun 5e Quickstart",
+      "href": "https://www.drivethrurpg.com/product/160161",
+      "linkLabel": "Free, registration required",
+      "hosted": false
+    },
+    {
+      "name": "Call of Cthulhu Quickstart + The Haunting",
+      "href": "https://www.chaosium.com/cthulhu-quickstart/",
+      "linkLabel": "Free, downloads instantly",
+      "hosted": false
+    },
+    {
+      "name": "Cairn Full Rules",
+      "href": "https://cairnrpg.com",
+      "linkLabel": "Free, no registration",
+      "hosted": false
+    },
+    {
+      "name": "Mörk Borg SRD",
+      "href": "https://morkborg.com/content/",
+      "linkLabel": "Free, no registration",
+      "hosted": false
+    }
   ],
-
   "tools": {
     "vtts": [
-      { "name": "Roll20", "href": "https://roll20.net", "linkLabel": "Free, registration required", "description": "Runs in the browser. Most beginner GMs start here." },
-      { "name": "Owlbear Rodeo", "href": "https://www.owlbear.rodeo", "linkLabel": "Free, registration required", "description": "Lightweight battle maps. No setup, no fuss." },
-      { "name": "Foundry VTT", "href": "https://foundryvtt.com", "linkLabel": "Paid", "description": "One-time purchase. Best automation and module support." },
-      { "name": "Alchemy VTT", "href": "https://alchemyrpg.com", "linkLabel": "Free tier, registration required", "description": "Strong free tier. Good for narrative-heavy games." },
-      { "name": "FreeVTT", "href": "https://freevtt.com", "linkLabel": "Free, no registration", "description": "No account needed. Works immediately." }
+      {
+        "name": "Roll20",
+        "href": "https://roll20.net",
+        "linkLabel": "Free, registration required",
+        "description": "Runs in the browser. Most beginner GMs start here."
+      },
+      {
+        "name": "Owlbear Rodeo",
+        "href": "https://www.owlbear.rodeo",
+        "linkLabel": "Free, registration required",
+        "description": "Lightweight battle maps. No setup, no fuss."
+      },
+      {
+        "name": "Foundry VTT",
+        "href": "https://foundryvtt.com",
+        "linkLabel": "Paid",
+        "description": "One-time purchase. Best automation and module support."
+      },
+      {
+        "name": "Alchemy VTT",
+        "href": "https://alchemyrpg.com",
+        "linkLabel": "Free tier, registration required",
+        "description": "Strong free tier. Good for narrative-heavy games."
+      },
+      {
+        "name": "FreeVTT",
+        "href": "https://freevtt.com",
+        "linkLabel": "Free, no registration",
+        "description": "No account needed. Works immediately."
+      }
     ],
     "characterSheets": [
-      { "name": "D&D Beyond", "href": "https://www.dndbeyond.com", "linkLabel": "Free, registration required", "description": "D&D 5e digital sheet, spell tracker, and character builder." },
-      { "name": "Archives of Nethys", "href": "https://2e.aonprd.com", "linkLabel": "Free, no registration", "description": "Full Pathfinder 2e rules and character building." },
-      { "name": "Progeny: Vampire V5 character creator", "href": "https://progeny.odin-matthias.de/", "linkLabel": "Free, no registration", "description": "Browser-based V5 sheet. Export to PDF, Foundry, or JSON." },
-      { "name": "Renegade Game Studios: Vampire V5 fillable PDF", "href": "https://renegadegamestudios.com/vampire-the-masquerade-5th-edition-roleplaying-game-pdf-fillable-character-sheet/", "linkLabel": "Free, downloads instantly", "description": "Official fillable PDF from the publisher." },
-      { "name": "Chaosium: Call of Cthulhu sheets", "href": "https://www.chaosium.com/cthulhu-character-sheets/", "linkLabel": "Free, downloads instantly", "description": "Official 7th edition sheets including auto-calc versions." },
-      { "name": "Evil Hat: FATE Core sheet", "href": "https://evilhat.com/fate-downloads/", "linkLabel": "Free, no registration", "description": "Official form-fillable PDF direct from the publisher." },
-      { "name": "Tuesday Knight Games: Mothership sheets", "href": "https://www.tuesdayknightgames.com/pages/mothership-resources-downloads", "linkLabel": "Free, no registration", "description": "Official 1e sheets plus player aids from the publisher." },
-      { "name": "Shadowrun 5 sheet generator", "href": "https://www.shadowrun5.net/index-en.html", "linkLabel": "Free, no registration", "description": "Community sheet generator, printable or PDF." }
+      {
+        "name": "D&D Beyond",
+        "href": "https://www.dndbeyond.com",
+        "linkLabel": "Free, registration required",
+        "description": "D&D 5e digital sheet, spell tracker, and character builder.",
+        "systemIds": [
+          "dnd"
+        ]
+      },
+      {
+        "name": "Archives of Nethys",
+        "href": "https://2e.aonprd.com",
+        "linkLabel": "Free, no registration",
+        "description": "Full Pathfinder 2e rules and character building.",
+        "systemIds": [
+          "pathfinder"
+        ]
+      },
+      {
+        "name": "Progeny: Vampire V5 character creator",
+        "href": "https://progeny.odin-matthias.de/",
+        "linkLabel": "Free, no registration",
+        "description": "Browser-based V5 sheet. Export to PDF, Foundry, or JSON.",
+        "systemIds": [
+          "vampire"
+        ]
+      },
+      {
+        "name": "Renegade Game Studios: Vampire V5 fillable PDF",
+        "href": "https://renegadegamestudios.com/vampire-the-masquerade-5th-edition-roleplaying-game-pdf-fillable-character-sheet/",
+        "linkLabel": "Free, downloads instantly",
+        "description": "Official fillable PDF from the publisher.",
+        "systemIds": [
+          "vampire"
+        ]
+      },
+      {
+        "name": "Chaosium: Call of Cthulhu sheets",
+        "href": "https://www.chaosium.com/cthulhu-character-sheets/",
+        "linkLabel": "Free, downloads instantly",
+        "description": "Official 7th edition sheets including auto-calc versions.",
+        "systemIds": [
+          "coc"
+        ]
+      },
+      {
+        "name": "Evil Hat: FATE Core sheet",
+        "href": "https://evilhat.com/fate-downloads/",
+        "linkLabel": "Free, no registration",
+        "description": "Official form-fillable PDF direct from the publisher.",
+        "systemIds": [
+          "fate"
+        ]
+      },
+      {
+        "name": "Tuesday Knight Games: Mothership sheets",
+        "href": "https://www.tuesdayknightgames.com/pages/mothership-resources-downloads",
+        "linkLabel": "Free, no registration",
+        "description": "Official 1e sheets plus player aids from the publisher.",
+        "systemIds": [
+          "mothership"
+        ]
+      },
+      {
+        "name": "Shadowrun 5 sheet generator",
+        "href": "https://www.shadowrun5.net/index-en.html",
+        "linkLabel": "Free, no registration",
+        "description": "Community sheet generator, printable or PDF.",
+        "systemIds": [
+          "shadowrun"
+        ]
+      }
     ],
     "diceRollers": [
-      { "name": "Dice.Codes", "href": "https://dice.codes", "linkLabel": "Free, no registration", "description": "Any dice notation. Shareable rolls." }
+      {
+        "name": "Dice.Codes",
+        "href": "https://dice.codes",
+        "linkLabel": "Free, no registration",
+        "description": "Any dice notation. Shareable rolls."
+      }
     ]
   },
-
   "aiGameMasters": [
     {
       "name": "Questwright",
@@ -493,22 +1231,38 @@
       "description": "Mobile app. 12 classes, 8 races, levels 1 to 20, automatic character progression, 3D dice."
     }
   ],
-
   "gameMasterSection": {
     "heading": "Thinking about running your own game?",
     "body": "Running a game is different from playing one. You're building the world, playing every NPC, and keeping five people engaged at once. It's the best seat at the table. The /start page has what you need to get your friends through the door.",
     "ctaLabel": "How to start your own game",
     "ctaHref": "/start"
   },
-
   "footer": {
     "links": [
-      { "label": "Systems", "href": "#systems" },
-      { "label": "Free Rules", "href": "#free-rules" },
-      { "label": "Tools", "href": "#tools" },
-      { "label": "Discord", "href": "#discord" },
-      { "label": "Quiz", "href": "/quiz" },
-      { "label": "Start Your Own Game", "href": "/start" }
+      {
+        "label": "Systems",
+        "href": "#systems"
+      },
+      {
+        "label": "Free Rules",
+        "href": "#free-rules"
+      },
+      {
+        "label": "Tools",
+        "href": "#tools"
+      },
+      {
+        "label": "Discord",
+        "href": "#discord"
+      },
+      {
+        "label": "Quiz",
+        "href": "/quiz"
+      },
+      {
+        "label": "Start Your Own Game",
+        "href": "/start"
+      }
     ],
     "attribution": "Built with Astro. Hosted on GitHub Pages."
   }

@@ -4,9 +4,11 @@
 
 ---
 
-## Current State (as of 2026-05-24)
+## Current State (as of 2026-10-06)
 
-- **Live:** Site is at v1.9 deployed at https://roleplayfree.com. Astro 4.x on GitHub Pages. All 3 affiliates live (DriveThruRPG ID 819957 wired into all system cards with real product IDs; Amazon UK tag cykodelik-21; StartPlaying.games referral). Google Analytics live (G-TRZLDRM1GF, property 538764501). Discord server live (id 1504064773619323051). SEO fundamentals shipped (sitemap, robots.txt, canonical, JSON-LD, og:url trailing-slash fix).
+- **Live:** Site is at **v2.0** deployed at https://roleplayfree.com. Astro 4.x on GitHub Pages. All 3 affiliates live (DriveThruRPG ID 819957 wired into all system cards with real product IDs; Amazon UK tag cykodelik-21; StartPlaying.games referral). Google Analytics live (G-TRZLDRM1GF, property 538764501). Discord server live (id 1504064773619323051). SEO fundamentals shipped (sitemap, robots.txt, canonical, JSON-LD, og:url trailing-slash fix).
+- **v2.0, 2026-10-06: 11 per-system landing pages are LIVE** at `/systems/<slug>/`, one per game system, each with its own title, meta description, canonical and breadcrumb schema. This closes the "biggest remaining SEO opportunity" that sat in Needs Decision from 2026-05-24. Route is `src/pages/systems/[id].astro`; the param is fed from each system's new `slug` field in site-content.json, so filename and URL deliberately differ. **Peter's standing copy-approval rule was NOT satisfied for the 11 meta descriptions: he pushed deliberately, treating the site as a vibe-coded placeholder (2026-10-06). The copy is live and unreviewed; it is fair game to rewrite.**
+- **Traffic reality check (GA4, 28 days to 2026-10-06): 6 sessions, 6 users, ALL landing on `/`, ZERO organic search, zero custom events.** Sources: 5 direct, 1 "AI Assistant". The site is effectively undiscovered, which is the premise the system pages are betting against. Re-run `python rf-analytics.py --days 28` to see whether the pages move organic off zero.
 - **GA4 note:** Old measurement ID G-1KVDJ8TC0K was orphaned -- the GA4 account (23637701) existed but had no property under it, so zero data was ever collected. New property 538764501 + stream created 2026-05-24 via API. Analytics script: G:\AI\Claude\Projects\Roleplayfree\rf-analytics.py (run with `python rf-analytics.py`, first real data in 24-48hrs).
 - **Pinned:**
   - Astro 4.x stack — do not switch frameworks
@@ -22,13 +24,34 @@
 - **Needs Decision:**
   - Homepage meta description rewrite (drafted, awaits Peter's copy approval before going live)
   - Per-page meta description for index.astro (same)
-  - Whether to build individual system pages (/systems/vampire etc.) — biggest remaining SEO opportunity; needs planning session
   - Whether to create a Facebook app to clear the cosmetic fb:app_id warning (optional, not blocking)
   - Whether to submit sitemap to Google Search Console (manual 2-min step Peter has to do)
 
+## 🎓 THIS SITE IS NOW ALSO COURSEWORK (2026-10-06)
+
+Peter has **started an MCAST web development unit**. Lecture 1 covered **identifying users, building
+user cards / personas**, and then producing a **sitemap**. He intends to use **roleplayfree.com as his
+assignment**, or, if the real site proves too complicated, to build **a much slimmer version** using
+this as the starting point.
+
+Consequences for any work here:
+- The site has a sitemap already (`public/sitemap.xml`, static by design) and the 11 system pages give
+  it genuine structure. Both are reusable assignment artefacts.
+- **There are NO user personas / user cards documented anywhere in this project.** That is the obvious
+  gap and the obvious next task, and it is coursework-aligned rather than busywork.
+- A slimmer assignment build is a **cut-down of what exists**, never a rewrite. Astro 4.x stays pinned.
+- **Coursework outranks this site's commercial goals.** If the unit's requirements and the Amazon
+  deadline pull in different directions, the unit wins.
+- Peter's own framing: "basically a vibe coded web page", "basically a placeholder". He is not precious
+  about it. Do not treat the existing copy or structure as sacred.
+
+Full context: Claude memory file `project-mcast-web-development-unit`.
+
+---
+
 See [CHANGELOG.md](CHANGELOG.md) for version history. Pending SEO task list with detail lives in the **`project-roleplayfree.md` memory file** (recalled automatically; it is in the Claude memory store, NOT in ClaudeAssets/Reference/ — that path was wrong and was corrected in the 2026-08-09 sweep).
 
-> **⚠️ VERSION DISCREPANCY, unresolved 2026-08-09:** this file and `CHANGELOG.md` both stop at **v1.9**, but `MEMORY.md` records the site as **LIVE v2.0**. The project's own VERSIONING rule below makes a CHANGELOG entry mandatory for every release, so one of the two is wrong. **Confirm with Peter which is live before doing any site work or writing a version tag.**
+> **✅ VERSION DISCREPANCY RESOLVED 2026-10-06.** `MEMORY.md` said v2.0, CHANGELOG stopped at v1.9, and nothing in the repo ever claimed v2.0. Cause: the 2026-05-24 GA4 measurement-ID fix and the og:url / `is:inline` commits shipped live after v1.9 with no CHANGELOG entry, breaching the VERSIONING rule below. Rather than back-date a version that was never written, those changes are folded into **v2.0, logged 2026-10-06** alongside the system pages. **v2.0 is now real, documented and live. Do not re-raise.** Lesson: on this repo a push IS a deploy, so an unversioned commit is an unversioned release.
 
 ---
 
