@@ -1,5 +1,24 @@
 # Changelog
 
+## v2.1 - 2026-10-06
+Custom event tracking. The site can finally measure behaviour, not just page views.
+Files: src/components/Analytics.astro (new), src/layouts/Layout.astro, src/pages/systems/[id].astro.
+- **Why:** five months of GA4 data contained exactly four event types (first_visit, page_view, session_start, user_engagement). Nothing recorded whether a visitor had ever clicked an affiliate link, opened a free rulebook, or finished the quiz. With the Amazon Associates requirement of 3 qualifying sales, "does anyone click the money links" was unanswerable.
+- Analytics.astro: new component holding the GA4 tag plus custom tracking. One delegated click listener on `document`, so no other component needs editing and links added later are covered automatically.
+- Events added: `outbound_click`, `affiliate_click`, `discord_click`, `system_link_click`, `system_page_view`, `scroll_depth` (25/50/75/90), `quiz_start`, `quiz_answer`, `quiz_complete`, `quiz_retake`, `quiz_share`.
+- Parameters captured: link_domain, link_url, link_text, link_class, price_label (read off the existing `link-label--*` badge classes), section, system, quiz_result, depth.
+- `affiliate_click` and `discord_click` are deliberately separate EVENT NAMES rather than parameters, because GA4 reports event counts with no configuration but will not break down by a parameter until it is registered as a custom dimension. The two questions that matter most stay readable with zero GA4 setup.
+- Layout.astro: inline GA4 block replaced with `<Analytics />`. One GA4 install per page, verified.
+- systems/[id].astro: added ids `where-to-start` and `find-players` so the `section` parameter resolves on system pages instead of reporting "none".
+
+**Two bugs caught before deploy, both by testing rather than reading:**
+- `define:vars` makes Astro wrap an inline script in an IIFE, which scopes `gtag` locally and leaves `window.gtag` undefined. That would have silently killed every event on the site. **This is the same fault as commit 9bff2cb (2026-05-25).** Fixed by writing the measurement ID literally and assigning `window.gtag` explicitly. A comment in the file warns against reintroducing define:vars.
+- The script sits in `<head>`, so `getElementById` ran before `<body>` was parsed and the quiz-completion observer never attached. Click tracking was unaffected because it delegates off `document`. Fixed with a DOM-ready wrapper, plus an immediate check on attach so a result restored from localStorage by a returning visitor is not missed.
+
+**Verification:** 18 automated checks against the real built HTML in jsdom, all passing. Build clean at 14 pages, GA4 tag present on all 14, exactly one gtag config per page.
+
+**Still manual, Peter's call:** register the custom dimensions in GA4 (Admin > Custom definitions) to break reports down by parameter, and switch on Enhanced Measurement in the data stream settings, which is currently OFF and is why no `scroll` or `click` events exist historically.
+
 ## v2.0 - 2026-10-06
 Per-system landing pages. 11 new indexable pages, one per game system.
 Files: src/pages/systems/[id].astro (new), src/components/SystemCard.astro, src/content/site-content.json, public/sitemap.xml, .gitignore, rf-analytics.py (new), rf-report.txt (new).

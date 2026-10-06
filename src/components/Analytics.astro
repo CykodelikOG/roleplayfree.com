@@ -1,0 +1,267 @@
+---
+/**
+ * Analytics.astro -- Google Analytics 4 tag plus custom event tracking.
+ *
+ * WHAT THIS FILE IS FOR
+ * GA4's default install only reports page views. Until 2026-10-06 this site collected
+ * exactly four event types (first_visit, page_view, session_start, user_engagement),
+ * which means five months of traffic told us nothing about BEHAVIOUR: nobody knew
+ * whether a single visitor had ever clicked an affiliate link, opened a free rulebook,
+ * or finished the quiz. This file fixes that.
+ *
+ * HOW IT WORKS
+ * One listener on `document` catches every click as it bubbles up (event delegation),
+ * so no other component needs editing and links added later are tracked automatically.
+ * The listener works out, from the DOM around the clicked link, what the click MEANT:
+ *   - which outbound domain it went to
+ *   - whether the link was badged Free / Free with registration / Paid (reusing the
+ *     `link-label--*` classes the site already renders)
+ *   - which page section it sat in (nearest ancestor with an id, e.g. free-rules)
+ *   - which game system, when on a /systems/<slug>/ page
+ *
+ * IMPORTANT, READ BEFORE CHECKING REPORTS
+ * GA4 collects event parameters immediately, but will NOT break reports down by a
+ * parameter until that parameter is registered as a custom dimension in the GA4 UI
+ * (Admin > Custom definitions). Event COUNTS need no setup at all. That is why the
+ * revenue question gets its own event name, `affiliate_click`, instead of living as a
+ * parameter on `outbound_click`: the headline answer stays readable with zero config.
+ * Parameters worth registering as custom dimensions:
+ *   link_domain, link_class, price_label, section, system, quiz_result, depth
+ *
+ * Enhanced Measurement (GA4's automatic scroll and outbound-click tracking) appears to
+ * be OFF on property 538764501, which is why no `scroll` or `click` events exist in
+ * five months of data. It is a toggle in the GA4 data stream settings. Nothing here
+ * depends on it, and these events are deliberately named so they will not collide with
+ * GA4's own if it is switched on later.
+ *
+ * Tracking must never break the site, so every send is wrapped and every lookup is
+ * defensive. A visitor with an ad blocker simply records nothing, which is also why
+ * GA4 totals are a floor and not a true visitor count.
+ */
+const GA_ID = 'G-TRZLDRM1GF';
+---
+
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+<!--
+  Do NOT add define:vars to the script below, and do not rely on a bare `function gtag`.
+  define:vars makes Astro wrap the script in an IIFE, which scopes `gtag` locally and
+  leaves window.gtag undefined, silently killing every event on the site. That exact
+  fault already cost this repo a fix once (commit 9bff2cb, 2026-05-25, "Astro was
+  bundling it as a module, renaming gtag()"). The measurement ID is therefore written
+  out literally here, and gtag is assigned to `window` explicitly so it survives any
+  wrapper Astro decides to add.
+-->
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-TRZLDRM1GF');
+</script>
+
+<script is:inline>
+  (function () {
+    'use strict';
+
+    // Domains grouped by what a click on them actually means commercially.
+    var AFFILIATE = ['drivethrurpg.com', 'amazon.', 'amzn.to', 'startplaying.games'];
+    var DISCORD   = ['discord.gg', 'discord.com', 'disboard.org'];
+    var VTT       = ['roll20.net', 'foundryvtt.com', 'owlbear.rodeo', 'freevtt.com',
+                     'alchemyrpg.com', 'dice.codes', 'questwright.app', 'fables.gg',
+                     'masterai.app', 'lore-keeper.com', 'progeny.odin-matthias.de'];
+
+    function send(name, params) {
+      try {
+        if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+      } catch (e) { /* tracking must never break the page */ }
+    }
+
+    function host(url) {
+      try { return new URL(url, location.href).hostname.replace(/^www\./, ''); }
+      catch (e) { return ''; }
+    }
+
+    function inList(h, list) {
+      for (var i = 0; i < list.length; i++) {
+        if (h.indexOf(list[i]) !== -1) return true;
+      }
+      return false;
+    }
+
+    function classify(h) {
+      if (inList(h, AFFILIATE)) return 'affiliate';
+      if (inList(h, DISCORD))   return 'discord';
+      if (inList(h, VTT))       return 'vtt_tool';
+      if (h === 'shiftrpg.com') return 'shift_funnel';
+      return 'other';
+    }
+
+    // The site already badges links Free / Free (registration) / Paid. Reuse that.
+    function priceLabel(a) {
+      var badge = a.querySelector('.link-label');
+      if (!badge) return 'none';
+      if (badge.classList.contains('link-label--paid'))     return 'paid';
+      if (badge.classList.contains('link-label--free-reg')) return 'free_registration';
+      if (badge.classList.contains('link-label--free'))     return 'free';
+      return 'none';
+    }
+
+    // Nearest ancestor with an id tells us which part of the page the click came from.
+    function section(el) {
+      var n = el;
+      while (n && n !== document.body) {
+        if (n.id) return n.id;
+        n = n.parentElement;
+      }
+      return 'none';
+    }
+
+    // On /systems/<slug>/ pages, which system is being looked at.
+    function currentSystem() {
+      var m = location.pathname.match(/^\/systems\/([^/]+)\/?$/);
+      return m ? m[1] : 'none';
+    }
+
+    var SYSTEM = currentSystem();
+
+    function trim(s) {
+      return (s || '').replace(/\s+/g, ' ').trim().slice(0, 100);
+    }
+
+    // ---- Clicks -----------------------------------------------------------
+    document.addEventListener('click', function (ev) {
+      var target = ev.target;
+      if (!target || !target.closest) return;
+
+      // Quiz interactions are buttons, not links.
+      var btn = target.closest('button');
+      if (btn) {
+        if (btn.classList.contains('quiz-option')) {
+          var qi = btn.getAttribute('data-qindex');
+          if (qi === '0') send('quiz_start', {});
+          send('quiz_answer', {
+            question_index: Number(qi),
+            answer: btn.getAttribute('data-value')
+          });
+        } else if (btn.classList.contains('share-btn')) {
+          send('quiz_share', {
+            network: btn.getAttribute('data-share'),
+            stage: btn.getAttribute('data-pre') === 'true' ? 'before_quiz' : 'after_result'
+          });
+        } else if (btn.id === 'retake-btn') {
+          send('quiz_retake', {});
+        }
+      }
+
+      var a = target.closest('a[href]');
+      if (!a) return;
+
+      var href = a.getAttribute('href') || '';
+      if (href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+
+      var h = host(href);
+      var internal = !h || h === location.hostname.replace(/^www\./, '');
+
+      if (internal) {
+        // The internal click worth knowing about: which system page people choose.
+        var sm = href.match(/^\/systems\/([^/]+)\/?$/);
+        if (sm) {
+          send('system_link_click', {
+            system: sm[1],
+            section: section(a),
+            link_text: trim(a.textContent)
+          });
+        }
+        return;
+      }
+
+      var cls = classify(h);
+      var params = {
+        link_domain: h,
+        link_url: href.slice(0, 200),
+        link_text: trim(a.textContent),
+        link_class: cls,
+        price_label: priceLabel(a),
+        section: section(a),
+        system: SYSTEM
+      };
+
+      send('outbound_click', params);
+
+      // Separate event names so the two questions that matter most need no GA4 setup.
+      if (cls === 'affiliate') send('affiliate_click', params);
+      if (cls === 'discord')   send('discord_click', params);
+    }, true);
+
+    // ---- Scroll depth -----------------------------------------------------
+    // Answers "did anyone actually read it", which an 18-second average cannot.
+    var marks = [25, 50, 75, 90];
+    var hit = {};
+    function onScroll() {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+      var pct = (window.scrollY / scrollable) * 100;
+      for (var i = 0; i < marks.length; i++) {
+        var m = marks[i];
+        if (!hit[m] && pct >= m) {
+          hit[m] = true;
+          send('scroll_depth', { depth: m, system: SYSTEM });
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ---- Quiz completion --------------------------------------------------
+    // The quiz fills #result-primary-name when it finishes, so watch for that
+    // rather than modifying the quiz logic itself.
+    //
+    // This MUST wait for the DOM. Layout.astro puts this script in <head>, so at
+    // the point it first runs the <body> has not been parsed and getElementById
+    // returns null. Click tracking above is unaffected because it delegates off
+    // `document`, which always exists; anything that reaches for a real element
+    // does not have that luxury. Found by the jsdom test on 2026-10-06, where
+    // quiz_complete was the only event that never fired.
+    function onReady(fn) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fn);
+      } else {
+        fn();
+      }
+    }
+
+    onReady(function () {
+      var resultEl = document.getElementById('result-primary-name');
+      if (!resultEl) return;
+      var fired = false;
+
+      function maybeFire() {
+        if (fired) return;
+        var name = trim(resultEl.textContent);
+        if (!name) return;
+        fired = true;
+        var secondary = document.getElementById('result-secondary-name');
+        send('quiz_complete', {
+          quiz_result: name,
+          quiz_runner_up: secondary ? trim(secondary.textContent) : 'none'
+        });
+      }
+
+      // Check once on attach, not only on future mutations. The quiz saves and
+      // restores progress (see saveState/clearState in Quiz.astro), so a returning
+      // visitor can have their result already rendered before this code runs. An
+      // observer alone only sees changes AFTER it attaches and would miss that
+      // entirely, under-reporting exactly the people who came back.
+      maybeFire();
+
+      if (typeof MutationObserver === 'function') {
+        new MutationObserver(maybeFire)
+          .observe(resultEl, { childList: true, characterData: true, subtree: true });
+      }
+    });
+
+    // ---- System page view -------------------------------------------------
+    // page_view already fires; this one carries the system as a parameter so the
+    // 11 new pages can be ranked against each other without URL parsing.
+    if (SYSTEM !== 'none') send('system_page_view', { system: SYSTEM });
+  })();
+</script>

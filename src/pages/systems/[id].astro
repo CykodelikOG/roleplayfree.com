@@ -115,7 +115,7 @@ const canonicalUrl = `https://roleplayfree.com/systems/${system.slug}/`;
 
       <div class="sp-body">
 
-        <section class="sp-section">
+        <section class="sp-section" id="where-to-start">
           <h2>Where to start</h2>
           {system.freeRules ? (
             <a href={system.freeRules.href} target="_blank" rel="noopener" class="sp-resource">
@@ -144,7 +144,7 @@ const canonicalUrl = `https://roleplayfree.com/systems/${system.slug}/`;
           )}
         </section>
 
-        <section class="sp-section">
+        <section class="sp-section" id="find-players">
           <h2>Find other players</h2>
           {discordEntry?.href ? (
             <a href={discordEntry.href} target="_blank" rel="noopener" class="sp-resource">

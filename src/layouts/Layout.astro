@@ -1,4 +1,6 @@
 ---
+import Analytics from '../components/Analytics.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -44,14 +46,9 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TRZLDRM1GF"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TRZLDRM1GF');
-    </script>
+    <!-- Google Analytics 4 tag + custom event tracking. See Analytics.astro for what
+         is tracked and the GA4 custom-dimension caveat before reading any report. -->
+    <Analytics />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
