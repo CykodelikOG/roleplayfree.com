@@ -64,11 +64,9 @@ Consequences for any work here:
   basing it on an existing public site is allowed, whether UI/UX module work can feed in, and AI-use
   rules. **Before any commercial reuse:** have the IP answer in writing, and carry over the affiliate IDs,
   GA4 ID and the gtag lessons in Analytics.astro. **URL structure is NOT being preserved** (Peter,
-  2026-10-20: existing traffic is too small to protect). Old URLs will 404; a `404.html` pointing home
-  is the only mitigation. The coursework repo lives on **Peter's MCAST GitHub account, not CykodelikOG**,
-  so Claude has no access to it unless Peter adds it; at switchover the code is COPIED into this repo,
-  which keeps the CNAME and Pages settings. Keep Amazon links and the real GA4 ID off the coursework
-  deploy (Amazon only allows links on registered sites; class visits would swamp GA).
+  2026-10-20: existing traffic too small to protect). **The final build must redirect old URLs that
+  would 404** (e.g. a `404.html` sending visitors home). The coursework is built on Peter's own MCAST
+  GitHub account, which Claude never touches; learning git there is part of the course.
 - **Coursework outranks this site's commercial goals.** If the unit's requirements and the Amazon
   deadline pull in different directions, the unit wins.
 - Peter's own framing: "basically a vibe coded web page", "basically a placeholder". He is not precious
