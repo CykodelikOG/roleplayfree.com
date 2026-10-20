@@ -28,7 +28,7 @@
   - Analytics: AI game masters are now `ai_gm`, split out of `vtt_tool`.
 - **GA4 note:** Old measurement ID G-1KVDJ8TC0K was orphaned -- the GA4 account (23637701) existed but had no property under it, so zero data was ever collected. New property 538764501 + stream created 2026-05-24 via API. Analytics script: G:\AI\Claude\Projects\Roleplayfree\rf-analytics.py (run with `python rf-analytics.py`, first real data in 24-48hrs).
 - **Pinned:**
-  - Astro 4.x stack — do not switch frameworks
+  - Astro 4.x stack, do not switch frameworks **ON THE LIVE SITE.** The live site stays on Astro until a replacement is ready to deploy. **Superseded for the coursework rebuild (Peter, 2026-10-20), see the coursework section.**
   - DriveThruRPG product IDs in site-content.json — already verified working; do not change
   - D&D and Pathfinder paidLinks are deliberately null (no standalone PDF on DTRPG for those systems)
   - Layout.astro JSON-LD prop pattern — use it for any future structured data, do not inline scripts
@@ -56,7 +56,15 @@ Consequences for any work here:
   it genuine structure. Both are reusable assignment artefacts.
 - **There are NO user personas / user cards documented anywhere in this project.** That is the obvious
   gap and the obvious next task, and it is coursework-aligned rather than busywork.
-- A slimmer assignment build is a **cut-down of what exists**, never a rewrite. Astro 4.x stays pinned.
+- ~~A slimmer assignment build is a cut-down of what exists, never a rewrite. Astro 4.x stays pinned.~~
+  **REVERSED by Peter, 2026-10-20: the assignment is a GROUND-UP REBUILD with NO Astro**, possibly under a
+  new name (roleplay.info floated; availability unchecked). Coursework first; the finished coursework
+  build then gets refined for commercial use and replaces the current site. The current Astro site stays
+  live, untouched, until then. Open with the lecturer before starting: the student IP policy, whether
+  basing it on an existing public site is allowed, whether UI/UX module work can feed in, and AI-use
+  rules. **Before any commercial reuse:** have the IP answer in writing, and preserve the live site's
+  `/systems/<slug>/` URLs (GitHub Pages cannot do server redirects), affiliate IDs, GA4 ID and the
+  gtag lessons in Analytics.astro.
 - **Coursework outranks this site's commercial goals.** If the unit's requirements and the Amazon
   deadline pull in different directions, the unit wins.
 - Peter's own framing: "basically a vibe coded web page", "basically a placeholder". He is not precious
