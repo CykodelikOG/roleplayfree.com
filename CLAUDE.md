@@ -70,6 +70,14 @@ school." He suspends the rule himself if he gets swamped; that is his call to ma
 pre-empt, and it gets no commentary. Once he understands a thing, he is happy to delegate building it.
 This does not license gatekeeping a direct code question.
 
+**🎨 MENU BAR ICON MOCK, 2026-10-28 (from UI Design Lecture 4, Figma):** Peter built a loose Figma mock
+of the site's menu bar and icons, in a carousel exercise ("DnD Carousel"): home, book, dice and a
+person-with-up-arrow icon, with the site name in the bar. **The icons come from Font Awesome
+(fontawesome.com). Use Font Awesome for the site's icons.** Photo and lecture notes: school repo,
+`user-interface-design/lecture-4/`. Claude's note, check before shipping: Font Awesome Free icons are
+CC BY 4.0, and Font Awesome says the attribution comment inside each SVG covers it, so keep that
+comment in when inlining. This fits the existing inline-SVG, no-emoji rule.
+
 **Ask which hat he is wearing** before building a site feature that could double as an assignment
 artefact. Commercial work on the live site against the Amazon deadline is not coursework and is not
 restricted by this.
